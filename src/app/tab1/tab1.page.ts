@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  email: string= "";
+  password: string = "";
+
   constructor() {}
 
+
+  login() {
+    // Aquí puedes agregar la lógica de inicio de sesión
+    console.log('Correo electrónico:', this.email);
+    console.log('Contraseña:', this.password);
+
+    // Lógica adicional para realizar la autenticación, redirección, etc.
+  }
 }
