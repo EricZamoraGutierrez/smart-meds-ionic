@@ -83,9 +83,9 @@
    */
 
   body {
-    --ion-color-primary: #428cff;
+    --ion-color-primary: #426eff; //color boton y tabs seleccionadas
     --ion-color-primary-rgb: 66,140,255;
-    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast: #ffffff; //color texto boton
     --ion-color-primary-contrast-rgb: 255,255,255;
     --ion-color-primary-shade: #3a7be0;
     --ion-color-primary-tint: #5598ff;
@@ -197,7 +197,7 @@
    */
 
   .md body {
-    --ion-background-color: #121212;
+    --ion-background-color: #000000; //color del fondo
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
@@ -205,7 +205,7 @@
 
     --ion-border-color: #222222;
 
-    --ion-color-step-50: #1e1e1e;
+    --ion-color-step-50: #1e1e1e; //color fondo cuadros de texto
     --ion-color-step-100: #2a2a2a;
     --ion-color-step-150: #363636;
     --ion-color-step-200: #414141;
@@ -214,8 +214,8 @@
     --ion-color-step-350: #656565;
     --ion-color-step-400: #717171;
     --ion-color-step-450: #7d7d7d;
-    --ion-color-step-500: #898989;
-    --ion-color-step-550: #949494;
+    --ion-color-step-500: #898989; //bordecito de abajo cuadros de texto
+    --ion-color-step-550: #949494; //texto cuaddros de texto
     --ion-color-step-600: #a0a0a0;
     --ion-color-step-650: #acacac;
     --ion-color-step-700: #b8b8b8;

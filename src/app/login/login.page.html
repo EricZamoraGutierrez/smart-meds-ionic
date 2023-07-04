@@ -1,0 +1,52 @@
+<ion-segment [(ngModel)]="selectedTab">
+  <ion-segment-button value="tab1">
+    Iniciar sesion
+  </ion-segment-button>
+  <ion-segment-button value="tab2">
+    Registrarse
+  </ion-segment-button>
+</ion-segment>
+
+<ion-content>
+  <ng-container *ngIf="selectedTab === 'tab1'">
+    <ion-card>
+      <ion-card-content>
+        <!-- Contenido de la pestaña 1 -->
+        <img src="assets/images/5087579.png" alt="">
+        <div class="correo">
+          <ion-input type="email" fill="solid" label="Email" labelPlacement="floating"
+            helperText="Introduce un correo valido"></ion-input>
+        </div>
+        <div class="contra">
+          <ion-input type="password" fill="solid" label="Contraseña" labelPlacement="floating"
+            helperText="Introduce una contraseña valida"></ion-input>
+        </div>
+        <ion-button expand="full">Iniciar sesión</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-container *ngIf="selectedTab === 'tab2'">
+    <ion-card>
+      <ion-card-content>
+        <!-- Contenido de la pestaña 2 -->
+        <img src="assets/images/5087579.png" alt="">
+        <div class="name">
+
+          <ion-input type="text" fill="solid" label="Nombre" labelPlacement="floating"
+            helperText="Introduce un nombre valido"></ion-input>
+        </div>
+        <div class="correo">
+
+          <ion-input type="email" fill="solid" label="Email" labelPlacement="floating"
+            helperText="Introduce un correo valido"></ion-input>
+        </div>
+        <div class="contra">
+
+          <ion-input type="password" fill="solid" label="Contraseña" labelPlacement="floating"
+            helperText="Introduce una contraseña valida"></ion-input>
+        </div>
+        <ion-button expand="full">Registrarse</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
