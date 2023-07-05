@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class Tab3Page {
   myForm: FormGroup;
   imageSource: string | ArrayBuffer | null = null;
+  formData: any[] = []; // Arreglo para almacenar los datos del formulario
 
   constructor(private formBuilder: FormBuilder) {
     this.myForm = this.formBuilder.group({
@@ -18,7 +19,7 @@ export class Tab3Page {
       phone: ['', Validators.required]
     });
   }
-//es para poder agregar la imagen
+
   displayImage(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
@@ -31,12 +32,18 @@ export class Tab3Page {
       reader.readAsDataURL(input.files[0]);
     }
   }
+
   submitForm(): void {
     if (this.myForm.valid) {
-      console.log('Formulario valido xd');
-    } else {
-      console.log('Formulario teleton');
-    }
+      
+      this.formData.push(this.myForm.value);
+
+      // Reiniciar el formulario
+      this.myForm.reset();
+
+
+      console.log('Formulario enviado. Datos guardados:', this.formData);
+    } 
   }
 
   isFormValid(): boolean {
