@@ -30,28 +30,29 @@
       </div>
     </div>
     <div class="form-wrapper">
-      <form>
+      <form [formGroup]="myForm">
         <ion-item>
           <ion-label position="floating">Nombre:</ion-label>
-          <ion-input type="text" id="name" name="name"></ion-input>
+          <ion-input type="text" id="name" name="name" formControlName="name"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Correo electrónico:</ion-label>
-          <ion-input type="email" id="email" name="email"></ion-input>
+          <ion-input type="email" id="email" name="email" formControlName="email"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Contraseña:</ion-label>
-          <ion-input type="password" id="password" name="password"></ion-input>
+          <ion-input type="password" id="password" name="password" formControlName="password"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Teléfono:</ion-label>
-          <ion-input type="tel" id="phone" name="phone"></ion-input>
+          <ion-input type="tel" id="phone" name="phone" formControlName="phone"></ion-input>
         </ion-item>
 
-        <ion-button expand="full" type="submit">UPDATE</ion-button>
+        <ion-button expand="full" (click)="submitForm()" [disabled]="!isFormValid()">UPDATE</ion-button>
+
       </form>
     </div>
   </div>
