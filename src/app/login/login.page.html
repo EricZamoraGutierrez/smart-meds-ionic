@@ -13,15 +13,16 @@
       <ion-card-content>
         <!-- Contenido de la pestaña 1 -->
         <img src="assets/images/5087579.png" alt="">
+        
         <div class="correo">
           <ion-input type="email" fill="solid" label="Email" labelPlacement="floating"
-            helperText="Introduce un correo valido"></ion-input>
+            helperText="Introduce un correo valido" id="email" [(ngModel)]="login.email"></ion-input>
         </div>
         <div class="contra">
           <ion-input type="password" fill="solid" label="Contraseña" labelPlacement="floating"
-            helperText="Introduce una contraseña valida"></ion-input>
+            helperText="Introduce una contraseña valida" [(ngModel)]="login.pass"></ion-input>
         </div>
-        <ion-button expand="full" (click)="buttonClick();">Iniciar sesión</ion-button>
+        <ion-button expand="full" (click)="loginUser(login.email, login.pass)" >Iniciar sesión</ion-button>
       </ion-card-content>
     </ion-card>
   </ng-container>
@@ -34,19 +35,19 @@
         <div class="name">
 
           <ion-input type="text" fill="solid" label="Nombre" labelPlacement="floating"
-            helperText="Introduce un nombre valido"></ion-input>
+            helperText="Introduce un nombre válido" [(ngModel)]="register.name"></ion-input>
         </div>
         <div class="correo">
 
           <ion-input type="email" fill="solid" label="Email" labelPlacement="floating"
-            helperText="Introduce un correo valido"></ion-input>
+            helperText="Introduce un correo válido" [(ngModel)]="register.email"></ion-input>
         </div>
         <div class="contra">
 
           <ion-input type="password" fill="solid" label="Contraseña" labelPlacement="floating"
-            helperText="Introduce una contraseña valida"></ion-input>
+            helperText="Introduce una contraseña válida" [(ngModel)]="register.pass"></ion-input>
         </div>
-        <ion-button expand="full" (click)="buttonClick();">Registrarse</ion-button>
+        <ion-button expand="full" (click)="registerUser(register.email,register.pass,register.name)" >Registrarse</ion-button>
       </ion-card-content>
     </ion-card>
   </ng-container>
