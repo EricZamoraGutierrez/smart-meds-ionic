@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginCheckService } from './services/login-check.service';
 import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
+import { Auth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,17 @@ export class AppComponent {
 
   async ngOnInit() {
     const loggedIn = await this.check.checkLogin();
-    if (loggedIn) {
-      this.UserService.login({ email: loggedIn[0], password: loggedIn[1] });
+    const email = loggedIn.email.value;
+    const password = loggedIn.password.value;
+    
+    if (email && password) {
+      this.UserService.login({ email:email , password: password }).then((response) => {
+        console.log(response);
+        if (response) {
+          console.log('Logged in');
+          //un pop up quizas?
+        }
+      });
     } else {
       console.log('Not logged in');
       this.router.navigate(['/login']);
