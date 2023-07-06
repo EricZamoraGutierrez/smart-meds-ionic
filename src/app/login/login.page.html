@@ -31,12 +31,9 @@
     <ion-card>
       <ion-card-content>
         <!-- Contenido de la pestaña 2 -->
+        
         <img src="assets/images/5087579.png" alt="">
-        <div class="name">
-
-          <ion-input type="text" fill="solid" label="Nombre" labelPlacement="floating"
-            helperText="Introduce un nombre válido" [(ngModel)]="register.name"></ion-input>
-        </div>
+<div class="email">        
         <div class="correo">
 
           <ion-input type="email" fill="solid" label="Email" labelPlacement="floating"
@@ -47,7 +44,29 @@
           <ion-input type="password" fill="solid" label="Contraseña" labelPlacement="floating"
             helperText="Introduce una contraseña válida" [(ngModel)]="register.pass"></ion-input>
         </div>
+       
+        <ion-button expand="full">Siguiente</ion-button>
+      </div> 
+
+      
+      <div class="datos">
+        <div class="nombre">
+
+          <ion-input type="text" fill="solid" label="Email" labelPlacement="floating"
+            helperText="Introduce un nombre valido"></ion-input>
+        </div>
+        <div class="apellido">
+
+          <ion-input type="text" fill="solid" label="Apellido" labelPlacement="floating"
+            helperText="Introduce una apellido valido"></ion-input>
+        </div>
+        <div class="telefono">
+
+          <ion-input type="text" fill="solid" label="Telefono" labelPlacement="floating"
+            helperText="Introduce un numero valido"></ion-input>
+        </div>
         <ion-button expand="full" (click)="registerUser(register.email,register.pass,register.name)" >Registrarse</ion-button>
+    </div>
       </ion-card-content>
     </ion-card>
   </ng-container>

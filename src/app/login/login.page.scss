@@ -2,7 +2,9 @@ ion-card{
 background-color: transparent;
 box-shadow: none;
 }
-
+.email{
+    display: block;
+}
 
 .correo{
     margin-top: 10px;
@@ -11,16 +13,30 @@ box-shadow: none;
 }
 .contra{
     margin-top: 10px;
-    
     padding: 10px;
     font-size: 18px;
 }
-.name{
+
+
+.datos{
+    display: none;
+}
+.nombre{
     margin-top: 10px;
-    
     padding: 10px;
     font-size: 18px;
 }
+.apellido{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+.telefono{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
 img{
     width: 80%;
     height: 80%;
