@@ -31,9 +31,10 @@
             [(ngModel)]="login.pass"
           ></ion-input>
         </div>
-        <ion-button expand="full" (click)="loginUser(login.email, login.pass)"
+        <ion-button id="open-loading" expand="full" (click)="loginUser(login.email, login.pass)"
           >Iniciar sesión</ion-button
         >
+        <ion-loading trigger="open-loading" message="Cargando..." [duration]="2000" spinner="circles"></ion-loading>
       </ion-card-content>
     </ion-card>
   </ng-container>
@@ -72,7 +73,7 @@
             (click)="registerUser(register.email,register.pass)" 
             >Siguiente</ion-button
           >
-          <ion-loading trigger="open-loading" message="Cargando..." [duration]="3000" spinner="circles"></ion-loading>
+          <ion-loading trigger="open-loading" message="Cargando..." [duration]="2000" spinner="circles"></ion-loading>
         </div>
 
         <div class="datos" [ngClass]="{'show':!show,'hide': show}" > 
@@ -107,10 +108,12 @@
             ></ion-input>
           </div>
           <ion-button
+          id="open-loading"
             expand="full"
             (click)="saveUserData(userData.name,userData.lastname,userData.phone,register.email)"
             >Registrarse</ion-button
           >
+          <ion-loading trigger="open-loading" message="Cargando..." [duration]="2000" spinner="circles"></ion-loading>
         </div>
       </ion-card-content>
     </ion-card>
