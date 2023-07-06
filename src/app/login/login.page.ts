@@ -54,6 +54,8 @@ export class LoginPage {
           this.uid = response.user.uid;
           this.show = false;
           //boton de carga pls!!!
+
+
         } else {
           console.log("Error Register!");
         }

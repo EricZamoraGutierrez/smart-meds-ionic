@@ -67,10 +67,12 @@
           </div>
 
           <ion-button
+          id="open-loading"
             expand="full"
             (click)="registerUser(register.email,register.pass)" 
             >Siguiente</ion-button
           >
+          <ion-loading trigger="open-loading" message="Cargando..." [duration]="5000" spinner="circles"></ion-loading>
         </div>
 
         <div class="datos"  > 
