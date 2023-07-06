@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore'
 import { UserService } from '../services/user.service';
+import { LoginCheckService } from '../services/login-check.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import { UserService } from '../services/user.service';
 export class LoginPage {
   constructor(private UserService: UserService,
     private router: Router,
-    private firestore: Firestore) {
+    private firestore: Firestore,
+    private check: LoginCheckService) {
 
   }
   selectedTab: string = 'tab1';
@@ -54,7 +56,7 @@ export class LoginPage {
       this.router.navigate(['/login']);
       if(response){
       console.log(response);
-      this.UserService.addUser({ name, email, password, id: response.user.uid});
+      this.check.setLogin(email, password);
     }else{
       console.log("Error Register!");
     }
@@ -65,7 +67,7 @@ export class LoginPage {
   }
 
   loginUser(email: string, password: string){
-    this.UserService.register({ email , password})
+    this.UserService.login({ email , password})
     .then(response=>{
       console.log("Success Login!");
       this.router.navigate(['/tabs']);

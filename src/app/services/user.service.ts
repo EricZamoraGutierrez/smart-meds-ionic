@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 @Injectable({
@@ -14,5 +14,8 @@ export class UserService {
   }
   addUser({ FirstName, LastName, Phone, id }: any) {
     return addDoc(collection(this.firestore, 'users'), { FirstName, LastName, Phone, id});
+  }
+  login({ email, password }: any) {
+    return signInWithEmailAndPassword(this.auth, email, password);
   }
 }
