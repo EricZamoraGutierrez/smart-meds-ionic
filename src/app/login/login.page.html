@@ -75,8 +75,7 @@
           <ion-loading trigger="open-loading" message="Cargando..." [duration]="3000" spinner="circles"></ion-loading>
         </div>
 
-        <div class="datos"  > 
-          <!-- [ngClass]="{'show':!show,'hide': show}" -->
+        <div class="datos" [ngClass]="{'show':!show,'hide': show}" > 
           <div class="nombre">
             <ion-input
               type="text"
