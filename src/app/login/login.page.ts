@@ -5,12 +5,35 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore'
 import { UserService } from '../services/user.service';
 import { LoginCheckService } from '../services/login-check.service';
 import { ElementRef, ViewChild } from '@angular/core';
+import { Toast } from '@capacitor/toast';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+
+  showemailError = async () => {
+    await Toast.show({
+      text: 'Correo invalido',
+    });
+  };
+  showpaswordError = async () => {
+    await Toast.show({
+      text: 'Contraseña invalida',
+    });
+  };
+  showemailUse = async () => {
+    await Toast.show({
+      text: 'Correo ya en uso',
+    });
+  };
+  showloginError = async () => {
+    await Toast.show({
+      text: 'Usuario o contraseña incorrectos',
+    });
+  };
   constructor(private UserService: UserService,
     private router: Router,
     private firestore: Firestore,
@@ -65,14 +88,17 @@ export class LoginPage {
         if (err.code == "auth/email-already-in-use") {
           this.loginUser(email, password);
           //aviso de ya existe y carga
+          this.showemailUse();
         }
         if (err.code == "auth/invalid-email") {
           console.log("Invalid Email");
           //hay que hacer un pop-up
+          this.showemailError();
         }
         if (err.code == "auth/weak-password") {
           console.log("Weak Password");
           //hay que hacer un pop-up
+          this.showpaswordError();
         }
       })
   }
@@ -87,12 +113,13 @@ export class LoginPage {
           this.router.navigate(['/tabs']);
         } else {
           console.log("Error Login!");
-
           //aviso de error 
+          
         }
       })
       .catch((err) => {
         console.log(err);
+        this.showloginError();
       })
   }
 
