@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class Tab4Page implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   cerrarsesion(){
     this.router.navigate(['/login']);
