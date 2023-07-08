@@ -1,7 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Tab4</ion-title>
+    <ion-title>Configuracion</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<button (click)="cerrarsesion">Cerrar  sesion</button>
+<div class="config">
+
+  <button class="perfil">Perfil</button>
+  <button class="noti">Notificaciones</button>
+  <button  class="dispo">Dispositivos</button>
+  <button class="temas">Apariencia</button>
+  <button class="manual">Manual de instruccionnes</button>
+  <button class="about">Acerca de nosotros</button>
+
+
+</div>
+
+<ion-button expand="full" (click)="cerrarsesion">Cerrar  sesion</ion-button>
