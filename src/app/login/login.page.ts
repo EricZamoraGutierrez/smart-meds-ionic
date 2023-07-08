@@ -110,6 +110,7 @@ export class LoginPage {
         if (response) {
           console.log(response);
           //boton de carga pls!!!
+          this.check.setLogin(email, password);
           this.router.navigate(['/tabs']);
         } else {
           console.log("Error Login!");
