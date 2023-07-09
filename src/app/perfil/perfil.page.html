@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="background-box"></div>
+
+  <div class="content-box">
+    <h1>Create Account</h1>
+    <div class="custom-file">
+      <input type="file" id="photo" name="photo" accept="image/*" (change)="displayImage($event)">
+      <label for="photo" class="file-label">
+        <span class="file-text">Cambiar foto de perfil</span>
+      </label>
+    </div>
+    <div class="profile-section">
+      <div class="image-preview" *ngIf="imageSource">
+        <img [src]="imageSource" alt="Vista previa de la imagen">
+      </div>
+    </div>
+    <div class="form-wrapper">
+      <form [formGroup]="myForm">
+        <ion-item>
+          <ion-input
+            type="text"
+            id="name"
+            fill="solid"
+            label="Nombre"
+            labelPlacement="floating"
+            helperText="Introduce un nombre valido"
+            formControlName="name"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            type="email"
+            id="email"
+            fill="solid"
+            label="Correo"
+            labelPlacement="floating"
+            helperText="Introduce un correo valido"
+            formControlName="email"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            type="password"
+            id="password"
+            fill="solid"
+            label="Contraseña"
+            labelPlacement="floating"
+            helperText="Introduce una contraseña valida"
+            formControlName="password"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            type="phone"
+            id="phone"
+            fill="solid"
+            label="Numero"
+            labelPlacement="floating"
+            helperText="Introduce un numero valido"
+            formControlName="phone"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" (click)="submitForm()" [disabled]="!isFormValid()">UPDATE</ion-button>
+
+      </form>
+    </div>
+  </div>
+</ion-content>

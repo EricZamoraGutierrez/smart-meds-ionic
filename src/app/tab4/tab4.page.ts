@@ -17,6 +17,12 @@ export class Tab4Page implements OnInit {
   ngOnInit() {
   }
 
-  
+  manual(){
+    this.router.navigate(['/manual']);
+  }
+
+  perfil(){
+    this.router.navigate(['/perfil']);
+  }
 }
 
