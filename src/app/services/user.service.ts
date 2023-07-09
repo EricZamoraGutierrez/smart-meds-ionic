@@ -7,7 +7,7 @@ import { doc } from 'firebase/firestore';
   providedIn: 'root'
 })
 export class UserService {
-
+  public userID: any;
   constructor(private auth: Auth, private firestore: Firestore) { }
 
   register({ email, password }: any) {
@@ -15,10 +15,18 @@ export class UserService {
   }
   addUser({ Apellido, Nombre, Phone, email, id }: any) {
     const dbref = collection(this.firestore, 'Users');
-       return addDoc(dbref, { Apellido, Nombre, Phone, email, id});
+    this.userID = id;
+    return addDoc(dbref, { Apellido, Nombre, Phone, email, id });
+
   }
 
   login({ email, password }: any) {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
-}
+  store(id: any) {
+    this.userID = id;
+  }
+  getUser() {
+    return this.userID;
+  }
+} 

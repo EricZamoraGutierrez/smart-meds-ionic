@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginPage } from '../login/login.page';
 
 @Component({
   selector: 'app-tab4',
@@ -16,4 +17,6 @@ export class Tab4Page implements OnInit {
   ngOnInit() {
   }
 
+  
 }
+
