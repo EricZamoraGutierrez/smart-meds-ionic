@@ -1,17 +1,162 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Registro de datos
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Formulario de datos</ion-card-title>
+    <ion-card-subtitle>Responde las siguientes preguntas</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <h2>¿Cual es el nombre del medicamento?</h2>
+      </ion-item>
+      <ion-input
+      type="text"
+      fill="solid"
+      label="Medicamento"
+      labelPlacement="floating"
+      helperText="Ejemplo: Paracetamol"
+    ></ion-input>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <ion-item>
+        <h2>¿Cual es la docis que se va a tomar?</h2>
+      </ion-item>
+      <ion-input
+      type="int"
+      fill="solid"
+      label="Dosis"
+      labelPlacement="floating"
+      helperText="Ejemplo: 1 pastilla"
+    ></ion-input>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-item>
+        <h2>¿Cual es el intevalo de consumo del medicamento?</h2>
+      </ion-item>
+      <ion-input
+      type="text"
+      fill="solid"
+      label="Intervalo"
+      labelPlacement="floating"
+      helperText="Ejemplo: 8 horas"
+    ></ion-input>
+
+      <ion-item>
+        <h2>¿Que dias se va a tomar el medicamento?</h2>
+      </ion-item>
+      <ion-input
+      type="text"
+      fill="solid"
+      label="Dias"
+      labelPlacement="floating"
+      helperText="Ejemplo: Lunes, Miercoles, Viernes"
+    ></ion-input>
+
+      <ion-item>
+        <h2>¿Esta fuerte?</h2>
+      </ion-item>
+      <ion-input
+      type="text"
+      fill="solid"
+      label="Dias"
+      labelPlacement="floating"
+      helperText="Ejemplo: Lunes, Miercoles, Viernes"
+    ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es la fecha de inicio?</h2>
+      </ion-item>
+      <ion-input
+      type="date"
+      fill="solid"
+      label="Fecha"
+      labelPlacement="floating"
+      helperText="Ejemplo: 01/01/2021"
+      ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es la fecha de finalizacion?</h2>
+      </ion-item>
+      <ion-input
+      type="date"
+      fill="solid"
+      label="Fecha"
+      labelPlacement="floating"
+      helperText="Ejemplo: 01/01/2021"
+      ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es la hora de inicio?</h2>
+      </ion-item>
+      <ion-input
+      type="time"
+      fill="solid"
+      label="Hora"
+      labelPlacement="floating"
+      helperText="Ejemplo: 08:00"
+      ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es la hora de finalizacion?</h2>
+      </ion-item>
+      <ion-input
+      type="time"
+      fill="solid"
+      label="Hora"
+      labelPlacement="floating"
+      helperText="Ejemplo: 08:00"
+      ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es la cantidad de medicamento?</h2>
+      </ion-item>
+      <ion-input
+      type="int"
+      fill="solid"
+      label="Cantidad"
+      labelPlacement="floating"
+      helperText="Ejemplo: 10"
+      ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es la unidad de medida?</h2>
+      </ion-item>
+      <ion-input
+      type="text"
+      fill="solid"
+      label="Unidad"
+      labelPlacement="floating"
+      helperText="Ejemplo: Pastillas"
+      ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es la presentacion del medicamento?</h2>
+      </ion-item>
+      <ion-input
+      type="text"
+      fill="solid"
+      label="Presentacion"
+      labelPlacement="floating"
+      helperText="Ejemplo: Caja"
+      ></ion-input>
+
+      <ion-item>
+        <h2>¿Cual es el precio del medicamento?</h2>
+      </ion-item>
+      <ion-input
+      type="int"
+      fill="solid"
+      label="Precio"
+      labelPlacement="floating"
+      helperText="Ejemplo: 10000"
+      ></ion-input>
+
+    </ion-list>
+  </ion-card-content>
+</ion-card>
 </ion-content>

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Firestore, collection, addDoc, doc, getDoc } from '@angular/fire/firestore'
 import { UserService } from '../services/user.service';
 import { getFirestore } from 'firebase/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -14,7 +15,7 @@ export class PerfilPage implements OnInit {
   imageSource: string | ArrayBuffer | null = null;
   formData: any[] = []; // Arreglo para almacenar los datos del formulario
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private firestore: Firestore) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private firestore: Firestore, private router: Router) {
     this.myForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required]],
