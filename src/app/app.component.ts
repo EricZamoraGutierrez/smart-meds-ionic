@@ -24,7 +24,11 @@ export class AppComponent {
           console.log('Logged in');
           //un pop up quizas?
         }
-      });
+      }, (error) => {
+        console.log(error);
+        this.router.navigate(['/login']);
+      }
+      );
     } else {
       console.log('Not logged in');
       this.router.navigate(['/login']);

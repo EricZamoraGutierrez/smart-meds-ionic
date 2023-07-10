@@ -71,9 +71,8 @@ export class LoginPage {
         this.check.setLogin(email, password)
         if (response) {
           console.log(response.user.uid);
-          this.uid = response.user.uid;
           this.show = false;
-          this.UserService.store(this.uid);
+          this.uid = response.user.uid;
           //boton de carga pls!!!
 
 
@@ -102,14 +101,15 @@ export class LoginPage {
     this.UserService.login({ email, password })
       .then(response => {
         console.log("Success Login!");
+        this.check.setLogin(email, password)
         if (response) {
           console.log(response);
-          this.check.setLogin(email, password);
           this.router.navigate(['/tabs']);
+          this.UserService.store(email);
         } else {
           console.log("Error Login!");
           //aviso de error 
-          
+
         }
       })
       .catch((err) => {
@@ -121,23 +121,25 @@ export class LoginPage {
 
   saveUserData(name: string, lastname: string, phone: string, email: string) {
     const loginid = this.uid;
+    const ProfilePic = "imagen_2023-07-10_140810894.png";
     const dbref = collection(this.firestore, 'Users');
-    addDoc(dbref, { name, lastname, phone, email, loginid })
+    addDoc(dbref, { name, lastname, phone, email, loginid, ProfilePic})
       .then(response => {
         console.log("Success!");
         console.log(response);
         this.router.navigate(['/tabs']);
+
         //crear una tab de transición en el futuro
       })
       .catch((err) => {
         console.log(err);
         //DEBEMOS HACER VALIDACIONES DE LOS DATOS
       })
-
+    this.UserService.store(email);
   }
 
 
-  
+
 }
 
 

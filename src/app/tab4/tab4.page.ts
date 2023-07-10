@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginPage } from '../login/login.page';
+import { LoginCheckService } from '../services/login-check.service';
 
 @Component({
   selector: 'app-tab4',
@@ -9,10 +10,11 @@ import { LoginPage } from '../login/login.page';
 })
 export class Tab4Page implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private login: LoginCheckService) { }
 
   cerrarsesion(){
     this.router.navigate(['/login']);
+    this.login.setLogout();
   }
   ngOnInit() {
   }

@@ -28,5 +28,6 @@ export class LoginCheckService {
   async setLogout(){
   await Preferences.set({ key: 'loginEmail', value: '' });
   await Preferences.set({ key: 'loginPassword', value: '' });
+  await Preferences.set({ key: 'userId', value: '' });
 }
 }
