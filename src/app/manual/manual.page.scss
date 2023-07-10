@@ -1,9 +1,14 @@
 ion-card{
     position: absolute;
     top: 50px;
-   width: 97%;
+   width: 96%;
    
 }
 ion-item {
     --padding-start: 0;
+  }
+
+  .regresar{
+    padding: 31px;
+    margin-bottom: 120px;
   }
