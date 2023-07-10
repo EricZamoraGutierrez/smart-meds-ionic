@@ -1,10 +1,9 @@
-import { Component, OnInit, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore'
 import { UserService } from '../services/user.service';
 import { LoginCheckService } from '../services/login-check.service';
-import { ElementRef, ViewChild } from '@angular/core';
 import { Toast } from '@capacitor/toast';
 
 @Component({
@@ -37,9 +36,7 @@ export class LoginPage {
   constructor(private UserService: UserService,
     private router: Router,
     private firestore: Firestore,
-    private check: LoginCheckService,
-    private element: ElementRef,
-    private renderer: Renderer2) {
+    private check: LoginCheckService) {
 
   }
   public show: boolean = true;
@@ -74,8 +71,8 @@ export class LoginPage {
         this.check.setLogin(email, password)
         if (response) {
           console.log(response.user.uid);
-          this.uid = response.user.uid;
           this.show = false;
+          this.uid = response.user.uid;
           //boton de carga pls!!!
 
 
@@ -87,17 +84,14 @@ export class LoginPage {
         console.log(err);
         if (err.code == "auth/email-already-in-use") {
           this.loginUser(email, password);
-          //aviso de ya existe y carga
           this.showemailUse();
         }
         if (err.code == "auth/invalid-email") {
           console.log("Invalid Email");
-          //hay que hacer un pop-up
           this.showemailError();
         }
         if (err.code == "auth/weak-password") {
           console.log("Weak Password");
-          //hay que hacer un pop-up
           this.showpaswordError();
         }
       })
@@ -107,15 +101,15 @@ export class LoginPage {
     this.UserService.login({ email, password })
       .then(response => {
         console.log("Success Login!");
+        this.check.setLogin(email, password)
         if (response) {
           console.log(response);
-          //boton de carga pls!!!
-          this.check.setLogin(email, password);
           this.router.navigate(['/tabs']);
+          this.UserService.store(email);
         } else {
           console.log("Error Login!");
           //aviso de error 
-          
+
         }
       })
       .catch((err) => {
@@ -127,8 +121,9 @@ export class LoginPage {
 
   saveUserData(name: string, lastname: string, phone: string, email: string) {
     const loginid = this.uid;
+    const ProfilePic = "imagen_2023-07-10_140810894.png";
     const dbref = collection(this.firestore, 'Users');
-    addDoc(dbref, { name, lastname, phone, email, loginid })
+    addDoc(dbref, { name, lastname, phone, email, loginid, ProfilePic})
       .then(response => {
         console.log("Success!");
         console.log(response);
@@ -140,11 +135,11 @@ export class LoginPage {
         console.log(err);
         //DEBEMOS HACER VALIDACIONES DE LOS DATOS
       })
-
+    this.UserService.store(email);
   }
 
 
-  changeSide() {
-    this.show = false;
-  }
+
 }
+
+

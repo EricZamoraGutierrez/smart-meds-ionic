@@ -15,7 +15,7 @@
   <div class="background-box"></div>
 
   <div class="content-box">
-    <h1>Create Account</h1>
+    <h1>Your profile</h1>
     <div class="custom-file">
       <input type="file" id="photo" name="photo" accept="image/*" (change)="displayImage($event)">
       <label for="photo" class="file-label">
@@ -38,6 +38,20 @@
             labelPlacement="floating"
             helperText="Introduce un nombre valido"
             formControlName="name"
+            value="{{userData.name}}"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            type="lastname"
+            id="lastname"
+            fill="solid"
+            label="Apellido(s)"
+            labelPlacement="floating"
+            helperText="Introduce apellido(s) válidos"
+            formControlName="lastname"
+            value="{{userData.lastname}}"
           ></ion-input>
         </ion-item>
 
@@ -50,20 +64,12 @@
             labelPlacement="floating"
             helperText="Introduce un correo valido"
             formControlName="email"
+            [readonly]="true"
+            value="{{userData.email}}"
           ></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-input
-            type="password"
-            id="password"
-            fill="solid"
-            label="Contraseña"
-            labelPlacement="floating"
-            helperText="Introduce una contraseña valida"
-            formControlName="password"
-          ></ion-input>
-        </ion-item>
+        
 
         <ion-item>
           <ion-input
@@ -74,6 +80,7 @@
             labelPlacement="floating"
             helperText="Introduce un numero valido"
             formControlName="phone"
+            value="{{userData.phone}}"
           ></ion-input>
         </ion-item>
 

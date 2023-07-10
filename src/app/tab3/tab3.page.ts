@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Database, getDatabase, ref } from '@angular/fire/database';
 import { get } from 'firebase/database';
+import { Firestore, collection, addDoc, query, where, getDocs, getDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-tab3',
@@ -9,7 +10,7 @@ import { get } from 'firebase/database';
 })
 export class Tab3Page {
   private database: Database = inject(Database)
-  constructor() { }
+  constructor( private firestore: Firestore ) { }
   public db = getDatabase()
   public reference = ref(this.db, 'Peso/peso' )
   public weight = 0;
@@ -21,8 +22,9 @@ export class Tab3Page {
       this.weight = value;
     }
     )
-
-  }
+  } 
+  
+  
 
 }
 
