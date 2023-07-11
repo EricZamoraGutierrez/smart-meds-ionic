@@ -42,8 +42,6 @@ export class LoginPage {
   public show: boolean = true;
   selectedTab: string = 'tab1';
 
-
-
   userData = {
     name: "",
     email: "",
