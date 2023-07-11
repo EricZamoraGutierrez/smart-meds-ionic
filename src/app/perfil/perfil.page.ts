@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Firestore, collection, addDoc, doc, getDoc } from '@angular/fire/firestore'
+import { Firestore, collection, addDoc, doc, getDoc, updateDoc } from '@angular/fire/firestore'
 import { UserService } from '../services/user.service';
 import { getFirestore } from 'firebase/firestore';
 import { Router } from '@angular/router';
+import { error } from 'console';
+import { getBlob, getBytes} from 'firebase/storage';
 
 @Component({
   selector: 'app-perfil',
@@ -25,10 +27,10 @@ export class PerfilPage implements OnInit {
     });
 
   }
-  userID: any;
+
   ngOnInit(): void {
     this.getUserData();
-    this.userID = this.userService.getUser();
+    // this.userID = this.userService.getUser();
   }
 
   //userdata
@@ -39,8 +41,12 @@ export class PerfilPage implements OnInit {
     phone: "",
     //lastname
   }
+  userID: any;
+  ProfilePic = "";
+  userDoc: any;
+  finishedLoading: boolean = false;
 
-  regresar(){
+  regresar() {
     this.router.navigate(['/tabs/tab4']);
   }
 
@@ -55,19 +61,22 @@ export class PerfilPage implements OnInit {
       };
       console.log(input.files[0]);
       reader.readAsDataURL(input.files[0]);
-      this.userService.saveProfilePic(input.files[0], this.userID);
+      this.userService.saveProfilePic(input.files[0]);
+      this.ProfilePic = input.files[0].name;
+      updateDoc(this.userDoc, {
+        ProfilePic: "images" + this.ProfilePic
+      }),
+        (error: any) => {
+          console.log(error);
+        }
     }
   }
 
   submitForm(): void {
     if (this.myForm.valid) {
-
       this.formData.push(this.myForm.value);
-
       // Reiniciar el formulario
       this.myForm.reset();
-
-
       console.log('Formulario enviado. Datos guardados:', this.formData);
     }
   }
@@ -83,9 +92,11 @@ export class PerfilPage implements OnInit {
     // this.userService.getProfilePic(id).then((url) => {
     //   this.imageSource = url;
     // });
+    this.userID = id;
     const docref = doc(db, 'Users', id);
+    this.userDoc = docref;
     console.log(docref);
-    let ProfilePic = "";
+
     try {
       const docSnap = await getDoc(docref);
       console.log(docSnap.data());
@@ -94,14 +105,24 @@ export class PerfilPage implements OnInit {
       this.userData.name = data.name;
       this.userData.phone = data.phone;
       this.userData.lastname = data.lastname;
-      ProfilePic = data.ProfilePic;
+      this.ProfilePic = data.ProfilePic;
     } catch (error) {
       console.log(error)
     }
-    // this.userService.getProfilePic(ProfilePic).then((url) => {
-    //   this.imageSource = url;
-    // });
+    this.userService.getProfilePicURL(this.ProfilePic).then((url) => {
+     
+      this.imageSource = url;
 
+    });
+
+    //Usar esta variable para definir cuando quitar la barra de carga
+    this.finishedLoading = true;
   }
 
+
+
 }
+
+export interface StorageReference {
+  getDownloadURL(): Promise<string>;
+};

@@ -51,38 +51,23 @@ export class UserService {
     return data;
   }
 
-  async saveProfilePic(file: File, id:any) {
+  async saveProfilePic(file: File) {
     const storage = getStorage();
     const storageRef = ref(storage, "images"+ file.name)
 
     uploadBytes(storageRef, file).then((snapshot) => {
       console.log('Uploaded a blob or file!');
-
-      const docref = doc(this.firestore, 'Users', id);
-      // updateDoc(docref, {
-      //   profilePic: "images" + file.name
-      // });
-      // getDownloadURL(snapshot.ref).then((downloadURL) => {
-      //   console.log('File available at', downloadURL);
-      // });
+      console.log(snapshot);
     }, (error) => {
       console.log(error);
     });
   }
 
 
-  // async getProfilePic(id: any) {
-  //   // const storage = getStorage();
-  //   // const picRef = ref(storage, id)
-  //   // const db = getFirestore();
-  //   // const docref = doc(db, 'Users', id);
-  //   // console.log(docref);
-  //   // const docSnap = await getDoc(docref);
-  //   // const data = docSnap.data();
-  //   // const pic = data?.[ProfilePic];
-  //   const url = await getDownloadURL(ref(getStorage(), id));
-  //   console.log(url);
-  //   return url;
-  // }
+  async getProfilePicURL(picUrl:any) {
+    const url = await getDownloadURL(ref(getStorage(), picUrl));
+    console.log(url);
+    return url;
+  }
 
 } 
