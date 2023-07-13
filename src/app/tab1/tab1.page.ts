@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -14,7 +15,7 @@ export class Tab1Page{
   email: string= "";
   password: string = "";
 
-  constructor() {}
+  constructor(private router:Router) {}
 
 
   login() {
@@ -23,5 +24,9 @@ export class Tab1Page{
     console.log('Contraseña:', this.password);
 
     // Lógica adicional para realizar la autenticación, redirección, etc.
+  }
+
+  agregar(){
+    this.router.navigate(['/agregar']);
   }
 }

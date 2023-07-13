@@ -27,6 +27,7 @@
         <img [src]="imageSource" alt="Vista previa de la imagen">
       </div>
     </div>
+    
     <div class="form-wrapper">
       <form [formGroup]="myForm">
         <ion-item>
@@ -36,7 +37,6 @@
             fill="solid"
             label="Nombre"
             labelPlacement="floating"
-            helperText="Introduce un nombre valido"
             formControlName="name"
             value="{{userData.name}}"
           ></ion-input>
@@ -49,7 +49,6 @@
             fill="solid"
             label="Apellido(s)"
             labelPlacement="floating"
-            helperText="Introduce apellido(s) válidos"
             formControlName="lastname"
             value="{{userData.lastname}}"
           ></ion-input>
@@ -62,7 +61,6 @@
             fill="solid"
             label="Correo"
             labelPlacement="floating"
-            helperText="Introduce un correo valido"
             formControlName="email"
             [readonly]="true"
             value="{{userData.email}}"
@@ -78,13 +76,12 @@
             fill="solid"
             label="Numero"
             labelPlacement="floating"
-            helperText="Introduce un numero valido"
             formControlName="phone"
             value="{{userData.phone}}"
           ></ion-input>
         </ion-item>
 
-        <ion-button expand="full" (click)="submitForm()">UPDATE</ion-button>
+        <ion-button expand="full" (click)="submitForm()" [disabled]="!isFormValid()">UPDATE</ion-button>
 
       </form>
     </div>
