@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 
 
@@ -16,7 +17,9 @@ export class Tab1Page implements OnInit {
   password: string = "";
 
   constructor(private router:Router) {}
-
+ngOnInit(): void {
+    
+}
 
   login() {
     // Aquí puedes agregar la lógica de inicio de sesión
