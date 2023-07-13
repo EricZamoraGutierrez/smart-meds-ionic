@@ -5,13 +5,15 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore'
 import { UserService } from '../services/user.service';
 import { LoginCheckService } from '../services/login-check.service';
 import { Toast } from '@capacitor/toast';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage implements OnInit{
+  
 
   showemailError = async () => {
     await Toast.show({
@@ -33,12 +35,24 @@ export class LoginPage {
       text: 'Usuario o contraseña incorrectos',
     });
   };
+
+  showDataError = async () => {
+    await Toast.show({
+      text: 'Datos incompletos',
+    });
+  };
+
   constructor(private UserService: UserService,
     private router: Router,
     private firestore: Firestore,
     private check: LoginCheckService) {
-
+      
   }
+  ngOnInit(): void {
+    
+  }
+  
+
   public show: boolean = true;
   selectedTab: string = 'tab1';
 
@@ -62,6 +76,8 @@ export class LoginPage {
   uid: any;
 
   registerUser(email: string, password: string) {
+
+    
     console.log(email, password);
     this.UserService.register({ email, password })
       .then(response => {
@@ -118,22 +134,30 @@ export class LoginPage {
 
 
   saveUserData(name: string, lastname: string, phone: string, email: string) {
-    const loginid = this.uid;
-    const ProfilePic = "imagen_2023-07-10_140810894.png";
-    const dbref = collection(this.firestore, 'Users');
-    addDoc(dbref, { name, lastname, phone, email, loginid, ProfilePic})
-      .then(response => {
-        console.log("Success!");
-        console.log(response);
-        this.router.navigate(['/tabs']);
 
-        //crear una tab de transición en el futuro
-      })
-      .catch((err) => {
-        console.log(err);
-        //DEBEMOS HACER VALIDACIONES DE LOS DATOS
-      })
-    this.UserService.store(email);
+    if(name == "" || lastname == "" || phone == "" || email == ""){
+      this.showDataError();
+      return;
+    }else{
+      const loginid = this.uid;
+      const ProfilePic = "imagen_2023-07-10_140810894.png";
+      const dbref = collection(this.firestore, 'Users');
+      addDoc(dbref, { name, lastname, phone, email, loginid, ProfilePic})
+        .then(response => {
+          console.log("Success!");
+          console.log(response);
+          this.router.navigate(['/tabs']);
+  
+          //crear una tab de transición en el futuro
+        })
+        .catch((err) => {
+          console.log(err);
+          //DEBEMOS HACER VALIDACIONES DE LOS DATOS
+        })
+      this.UserService.store(email);
+    }
+
+   
   }
 
 

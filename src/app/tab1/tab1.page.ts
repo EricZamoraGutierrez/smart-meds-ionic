@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 
@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page{
+export class Tab1Page implements OnInit {
 
   selectedTab: string = 'tab1';
 
-  email: string= "";
+  email: string = "";
   password: string = "";
 
-  constructor() {}
+  constructor() { }
 
 
   login() {
@@ -24,4 +24,8 @@ export class Tab1Page{
 
     // Lógica adicional para realizar la autenticación, redirección, etc.
   }
+
+  ngOnInit() {
+
+}
 }

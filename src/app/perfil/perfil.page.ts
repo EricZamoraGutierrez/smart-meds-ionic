@@ -12,6 +12,7 @@ import { getBlob, getBytes} from 'firebase/storage';
   templateUrl: 'perfil.page.html',
   styleUrls: ['perfil.page.scss']
 })
+
 export class PerfilPage implements OnInit {
   myForm: FormGroup;
   imageSource: string | ArrayBuffer | null = null;
