@@ -21,8 +21,6 @@ export class Tab3Page {
       const value = snapshot.val()
       this.weight = value;
 
-     
-     
     }
     )
   } 
@@ -35,7 +33,7 @@ export class Tab3Page {
   notify(){
      //this is a test notification
      const hora = new Date().getHours()
-     this.notifications.scheduleTest("Peso en la hora" + hora, 1, "Peso: " + this.weight + "g")
+     this.notifications.scheduleTest("Peso en la hora: " + hora, 1, "Peso: " + this.weight + "g")
   }
   
 

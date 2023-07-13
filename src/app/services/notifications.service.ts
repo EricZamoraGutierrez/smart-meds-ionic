@@ -22,17 +22,35 @@ export class NotificationsService {
   }
 
   async scheduleTest(MedName: string, MedInterval: number, MedComment: string) {
-    await LocalNotifications.schedule({
+    let options: ScheduleOptions ={
       notifications: [
         {
           id: 1,
           title: MedName,
           body: MedComment,
-          schedule: { on: { hour: MedInterval}, repeats: true, allowWhileIdle: true},
-          
+          summaryText: "Pls work",
+          schedule: { on: { hour: MedInterval}, repeats: true, allowWhileIdle: true,},
         }]
-    }).then(() => {
-      console.log("Notification set");
-    });
+    }
+
+    try {
+      await LocalNotifications.schedule(options);
+    }catch
+    {
+      console.log("error")
+    }
+
+
+    // await LocalNotifications.schedule({
+    //   notifications: [
+    //     {
+    //       id: 1,
+    //       title: MedName,
+    //       body: MedComment
+          
+    //     }]
+    // }).then(() => {
+    //   console.log("Notification set");
+    // });
   }
 }
