@@ -18,21 +18,33 @@
             labelPlacement="floating"
             id="email"
             [(ngModel)]="login.email"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"
+            required
           ></ion-input>
         </div>
         <div class="contra">
           <ion-input
-            type="password"
+            type=""
             fill="solid"
             label="Contraseña"
             labelPlacement="floating"
             [(ngModel)]="login.pass"
+            minlength="8"
+            required
           ></ion-input>
         </div>
-        <ion-button id="open-loading" expand="full" (click)="loginUser(login.email, login.pass)"
+        <ion-button
+          id="open-loading"
+          expand="full"
+          (click)="loginUser(login.email, login.pass)"
           >Iniciar sesión</ion-button
         >
-        <ion-loading trigger="open-loading" message="Cargando..." [duration]="2000" spinner="circles"></ion-loading>
+        <ion-loading
+          trigger="open-loading"
+          message="Cargando..."
+          [duration]="2000"
+          spinner="circles"
+        ></ion-loading>
       </ion-card-content>
     </ion-card>
   </ng-container>
@@ -44,13 +56,15 @@
 
         <img src="assets/images/5087579.png" alt="" />
         <div class="email" [ngClass]="{'show':show,'hide': !show}">
-          <div class="correo" >
+          <div class="correo">
             <ion-input
               type="email"
               fill="solid"
               label="Email"
               labelPlacement="floating"
               [(ngModel)]="register.email"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"
+              required
             ></ion-input>
           </div>
           <div class="contra">
@@ -60,19 +74,26 @@
               label="Contraseña"
               labelPlacement="floating"
               [(ngModel)]="register.pass"
+              minlength="8"
+              required
             ></ion-input>
           </div>
 
           <ion-button
-          id="open-loading"
+            id="open-loading"
             expand="full"
-            (click)="registerUser(register.email,register.pass)" 
+            (click)="registerUser(register.email,register.pass)"
             >Siguiente</ion-button
           >
-          <ion-loading trigger="open-loading" message="Cargando..." [duration]="2000" spinner="circles"></ion-loading>
+          <ion-loading
+            trigger="open-loading"
+            message="Cargando..."
+            [duration]="2000"
+            spinner="circles"
+          ></ion-loading>
         </div>
 
-        <div class="datos" [ngClass]="{'show':!show,'hide': show}" > 
+        <div class="datos" [ngClass]="{'show':!show,'hide': show}">
           <div class="nombre">
             <ion-input
               type="text"
@@ -101,14 +122,18 @@
             ></ion-input>
           </div>
           <ion-button
-          id="open-loading"
+            id="open-loading"
             expand="full"
             (click)="saveUserData(userData.name,userData.lastname,userData.phone,register.email)"
             >Registrarse</ion-button
           >
-          <ion-loading trigger="open-loading" message="Cargando..." [duration]="2000" spinner="circles"></ion-loading>
+          <ion-loading
+            trigger="open-loading"
+            message="Cargando..."
+            [duration]="2000"
+            spinner="circles"
+          ></ion-loading>
         </div>
       </ion-card-content>
-    </ion-card>
-  </ng-container></ion-content
->
+    </ion-card> </ng-container
+></ion-content>

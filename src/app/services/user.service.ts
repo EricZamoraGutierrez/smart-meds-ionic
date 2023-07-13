@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Firestore, collection, addDoc, query, where, getDocs, getDoc, updateDoc, getFirestore } from '@angular/fire/firestore';
-import { FirebaseStorage, getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { doc } from 'firebase/firestore';
 import { Preferences } from '@capacitor/preferences';
 
@@ -17,7 +17,7 @@ export class UserService {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
-  // async addUser({ Apellido, Nombre, Phone, email, id }: any) {
+  // async addUser({ Apellido, Nombre, Phone, id }: any) {
   //   const dbref = collection(this.firestore, 'Users');
   //   const PicRoute = "";
   //   this.store(email);
@@ -70,4 +70,14 @@ export class UserService {
     return url;
   }
 
+  async updateUserData(Apellido:any, Nombre:any, Phone:any, id:any, docref:any) {
+    const db = getFirestore();
+    const data = {
+      phone: Phone,
+      name: Nombre,
+      lastname: Apellido,
+    };
+    updateDoc(docref, data);
+    console.log("data updated for user:" + id);
+  }
 } 

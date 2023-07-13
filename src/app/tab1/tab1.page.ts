@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page{
+export class Tab1Page implements OnInit {
 
   selectedTab: string = 'tab1';
 
-  email: string= "";
+  email: string = "";
   password: string = "";
 
   constructor(private router:Router) {}

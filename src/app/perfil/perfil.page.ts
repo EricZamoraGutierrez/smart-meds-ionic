@@ -12,6 +12,7 @@ import { getBlob, getBytes} from 'firebase/storage';
   templateUrl: 'perfil.page.html',
   styleUrls: ['perfil.page.scss']
 })
+
 export class PerfilPage implements OnInit {
   myForm: FormGroup;
   imageSource: string | ArrayBuffer | null = null;
@@ -76,8 +77,9 @@ export class PerfilPage implements OnInit {
     if (this.myForm.valid) {
       this.formData.push(this.myForm.value);
       // Reiniciar el formulario
-      this.myForm.reset();
+      // this.myForm.reset();
       console.log('Formulario enviado. Datos guardados:', this.formData);
+      this.updateUserData(this.myForm.value.name, this.myForm.value.phone, this.myForm.value.lastname, this.userDoc, this.userID);
     }
   }
 
@@ -119,10 +121,18 @@ export class PerfilPage implements OnInit {
     this.finishedLoading = true;
   }
 
+  async updateUserData(name: string, phone: string, lastname: string, dbRef: any, id: string) {
+
+    this.userService.updateUserData( name, phone, lastname, dbRef, id).then(() => {
+      console.log("Datos actualizados");
+    }).catch((error) => {
+      console.log(error);
+    });
+
+    this.getUserData();
+
+    }
 
 
 }
 
-export interface StorageReference {
-  getDownloadURL(): Promise<string>;
-};
