@@ -95,6 +95,7 @@ export class PerfilPage implements OnInit {
     //   this.imageSource = url;
     // });
     this.userID = id;
+    console.log(this.userID);
     const docref = doc(db, 'Users', id);
     this.userDoc = docref;
     console.log(docref);

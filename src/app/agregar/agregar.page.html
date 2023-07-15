@@ -32,7 +32,7 @@
             </ion-item>
             <ion-input  id="dosis" formControlName="dosis" type="number" fill="solid" Placeholder="Dosis" helperText="Ejemplo: 1 pastilla"></ion-input>
             <ion-item>
-              <label>Medida</label>
+              <label>Unidad de medida</label>
               <ion-select id="medida" formControlName="medida" placeholder="Seleccione">
                 <ion-select-option>Miligramo(s)</ion-select-option>
                 <ion-select-option>Gramo(s)</ion-select-option>
@@ -42,12 +42,12 @@
           </div>
 
           <div class="presentacion">
-            <ion-item>
+            <!-- <ion-item>
               <h2>¿Cual es la presentacion del medicamento?</h2>
             </ion-item>
-            <ion-input id="presen" formControlName="presen" type="text" fill="solid" placeholder="Presentacion" helperText="Ejemplo: Caja"></ion-input>
+            <ion-input id="presen" formControlName="presen" type="text" fill="solid" placeholder="Presentacion" helperText="Ejemplo: Caja"></ion-input> -->
             <ion-item>
-              <label>Presentacion</label>
+              <label>Presentacion del medicamento</label>
               <ion-select id="presenForm" formControlName="presenForm" placeholder="Seleccione">
                 <ion-select-option>Pastilla</ion-select-option>
                 <ion-select-option>Capsula</ion-select-option>
@@ -57,11 +57,12 @@
               </ion-select>
             </ion-item>
           </div>
-
+          <ion-button (click)="saveMeds()">Save this shit</ion-button>
         </ion-card-content>
       </ion-card>
 
     </div>
+    
   </form>
   
   <form [formGroup]="myFormTiempo">
