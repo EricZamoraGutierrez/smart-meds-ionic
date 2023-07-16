@@ -41,6 +41,7 @@ export class AgregarPage implements OnInit {
     });
     this.myFormOtros = this.formBuilder.group({
       peso: ['', Validators.required],
+      repisaForm: ['', Validators.required],
       contra: ['', Validators.required],
       comentario: ['', Validators.required],
     });
@@ -70,10 +71,7 @@ export class AgregarPage implements OnInit {
         this.myFormGeneral.reset();
       this.myFormTiempo.reset();
       this.myFormOtros.reset();
-      console.log('Formulario guardado. Datos:', this.formDataGeneral, this.formDataTiempo, this.formDataOtros);
-      console.log("Saving...");
       this.saveMeds();
-      this.savePrescription();
       
     }
   }
@@ -125,7 +123,7 @@ export class AgregarPage implements OnInit {
 
   async saveOtherDetails() {
     await this.prescriptionStorage.addMedDetails(
-      this.formDataOtros[0].peso, this.formDataOtros[0].contra, this.formDataOtros[0].comentario, this.medId).then((res) => {
+      this.formDataOtros[0].peso,this.formDataOtros[0].repisaForm, this.formDataOtros[0].contra, this.formDataOtros[0].comentario, this.medId).then((res) => {
         console.log(res);
       }
       );
@@ -139,16 +137,10 @@ export class AgregarPage implements OnInit {
         console.log(this.medId);
 
         this.saveOtherDetails();
+        this.savePrescription();
       });
   }
 
 
-
-  async saveForSubmit() {
-    this.saveMeds;
-    console.log(" meds saved");
-    this.savePrescription
-    this.saveOtherDetails;
-  }
 
 }

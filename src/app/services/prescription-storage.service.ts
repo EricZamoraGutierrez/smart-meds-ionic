@@ -26,10 +26,10 @@ export class PrescriptionStorageService {
     
   }
 
-  async addMedDetails(peso: any, contra: any, comentario: any, MedID: any) {
+  async addMedDetails(peso: any,repisa:any, contra: any, comentario: any, MedID: any) {
     const dbref = collection(this.firestore, 'Medicaciones', MedID, 'Detalles');
     console.log(dbref);
-    return addDoc(dbref, { peso: peso, contra: contra, comentario: comentario, MedID: MedID });
+    return addDoc(dbref, { peso: peso,repisa:repisa, contra: contra, comentario: comentario, MedID: MedID });
   }
 
   async getMeds(UserID: string) {
