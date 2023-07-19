@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, query, where, getDocs, getDoc, updateDoc, getFirestore } from '@angular/fire/firestore';
+import { Database } from '@angular/fire/database';
+import { Firestore, collection, addDoc, query, where, getDocs, getDoc, updateDoc, getFirestore, setDoc, doc } from '@angular/fire/firestore';
+import { update } from 'firebase/database';
 
 @Injectable({
   providedIn: 'root'
@@ -17,19 +19,19 @@ export class PrescriptionStorageService {
 
   async addMeds(name: any, dosis: any, medida: any, presen: any) {
     const dbref = collection(this.firestore, 'Medicaciones');
-     return addDoc(dbref, {
+    return addDoc(dbref, {
       name: name,
       dosis: dosis,
       medida: medida,
       presen: presen
     });
-    
+
   }
 
-  async addMedDetails(peso: any,repisa:any, contra: any, comentario: any, MedID: any) {
-    const dbref = collection(this.firestore, 'Medicaciones', MedID, 'Detalles');
+  async addMedDetails(peso: any, repisa: any, contra: any, comentario: any, MedID: any) {
+    const dbref =  doc(this.firestore, 'Medicaciones', MedID);
     console.log(dbref);
-    return addDoc(dbref, { peso: peso,repisa:repisa, contra: contra, comentario: comentario, MedID: MedID });
+    return updateDoc(dbref, { Detalles: { peso: peso, repisa: repisa, contra: contra, comentario: comentario, MedID: MedID } });
   }
 
   async getMeds(UserID: string) {

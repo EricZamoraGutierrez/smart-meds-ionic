@@ -136,8 +136,9 @@ export class AgregarPage implements OnInit {
         this.medId = response.id;
         console.log(this.medId);
 
-        this.saveOtherDetails();
+        
         this.savePrescription();
+        this.saveOtherDetails();
       });
   }
 
