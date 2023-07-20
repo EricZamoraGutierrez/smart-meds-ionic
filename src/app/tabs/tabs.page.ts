@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +9,10 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor() {
+    
+      defineCustomElements(window);
+    
+  }
 
 }

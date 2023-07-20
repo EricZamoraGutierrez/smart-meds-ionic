@@ -14,6 +14,8 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
@@ -26,4 +28,6 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  
+}

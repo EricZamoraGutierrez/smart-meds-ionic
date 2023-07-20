@@ -1,15 +1,20 @@
 ion-card{
-    position: absolute;
-    top: 50px;
-   width: 96%;
    border-radius: 30px;
-   
+   ion-card-title{
+    margin-left: 15px;
+    text-align: center;
+    font-size: 26px;
+    margin: 10px 0 10px 0;
+   }
 }
-ion-item {
-    --padding-start: 0;
-  }
+img{
+  width: 50%; /* Valor de ancho de la imagen en porcentaje */
+  height: auto;
+  margin-left: 25%;
+  
+}
+
 
   .regresar{
     padding: 31px;
-    margin-bottom: 120px;
   }
