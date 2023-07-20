@@ -19,7 +19,7 @@ export class AppComponent {
     
     if (email && password) {
       this.UserService.login({ email:email , password: password }).then((response) => {
-        console.log(response);
+       
         if (response) {
           console.log('Logged in');
           //un pop up quizas?
