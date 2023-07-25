@@ -13,41 +13,81 @@
     </ion-toolbar>
   </ion-header>
   <!-- Si la puerta está abierta o cerrada -->
-  <p>{{state}}</p> 
+  <p></p>
 
-  <!-- Repisa "Alta" -->
-  <p>0 g.</p>
-  <ion-button (click)="readMedicinesFromShelf('Alta')">Repisa Alta</ion-button>
-  <!-- Supongamos que esto es un desplegable oculto -->
-  <ul>
-    <li *ngFor="let medicine of dataRepisaAlta">
-      <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
-      <div> {{medicine.presen}}</div>
-      <div> {{medicine.Detalles.comentario}}</div>
-    </li>
-  </ul>
+  <ion-card>
+    <div class="todo">
+      <h1>Estado de la puerta: {{state}}</h1>
+    </div>
+    <div class="alta">
+      <ion-card>
+        <ion-card-header (click)="readMedicinesFromShelf('Alta')" (click)="toggleCard()">
+          <ion-card-title>Datos de la repisa alta</ion-card-title>
+          <ion-card-title>Peso: g.</ion-card-title>
+        </ion-card-header>
 
-  <!-- Repisa "Media" -->
-  <p>{{weight}} g.</p>
-  <ion-button (click)="readMedicinesFromShelf('Media')">Repisa Media</ion-button>
-  <ul>
-    <li *ngFor="let medicine of dataRepisaMedia">
-      <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
-      <div> {{medicine.presen}}</div>
-      <div> {{medicine.Detalles.comentario}}</div>
-    </li>
-  </ul>
+        <ion-card-content *ngIf="!expanded">
 
-  
-  <!-- Repisa "Baja" -->
-  <p>0 g.</p>
-  <ion-button (click)="readMedicinesFromShelf('Baja')">Repisa Baja</ion-button>
-  <ul>
-    <li *ngFor="let medicine of dataRepisaBaja">
-      <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
-      <div> {{medicine.presen}}</div>
-      <div> {{medicine.Detalles.comentario}}</div>
-    </li>
-  </ul>
-  
+          <!-- Repisa "Alta" -->
+          <!-- Supongamos que esto es un desplegable oculto -->
+          <ol>
+            <li *ngFor="let medicine of dataRepisaAlta">
+              <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
+              <div> {{medicine.presen}}</div>
+              <div> {{medicine.Detalles.comentario}}</div>
+            </li>
+          </ol>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+
+    <div class="media">
+      <ion-card>
+        <ion-card-header (click)="toggleCard2()">
+          <ion-card-title>Datos de la repisa media</ion-card-title>
+          <ion-card-title>Peso: g.</ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="!expanded2">
+
+          <!-- Repisa "Media" -->
+          <ion-button (click)="readMedicinesFromShelf('Media')">Mostrar datos</ion-button>
+          <ul>
+            <li *ngFor="let medicine of dataRepisaMedia">
+              <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
+              <div> {{medicine.presen}}</div>
+              <div> {{medicine.Detalles.comentario}}</div>
+            </li>
+          </ul>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+    <div class="baja">
+      <ion-card>
+        <ion-card-header (click)="toggleCard3()">
+          <ion-card-title>Datos de la repisa baja </ion-card-title>
+          <ion-card-title>Peso: {{weight}} g.</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!expanded3">
+          <!-- Repisa "Baja" -->
+          <ion-button (click)="readMedicinesFromShelf('Baja')">Mostrar datos</ion-button>
+          <ul>
+            <li *ngFor="let medicine of dataRepisaBaja">
+              <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
+              <div> {{medicine.presen}}</div>
+              <div> {{medicine.Detalles.comentario}}</div>
+            </li>
+          </ul>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+  </ion-card>
 </ion-content>

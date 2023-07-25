@@ -10,6 +10,23 @@ import { NotificationsService } from '../services/notifications.service';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  expanded: boolean = true;
+  expanded2: boolean = true;
+  expanded3: boolean = true;
+  
+
+  toggleCard() {
+    this.expanded = !this.expanded;
+  }
+
+  toggleCard2() {
+    this.expanded2 = !this.expanded2;
+  }
+
+  toggleCard3() {
+    this.expanded3 = !this.expanded3;
+  }
+
 
   constructor(private firestore: Firestore, private notifications: NotificationsService) { }
   public db = getDatabase()
