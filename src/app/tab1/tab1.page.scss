@@ -10,3 +10,10 @@ ion-card{
   margin: 20px;
   border-radius: 30px;
 }
+
+.textimage{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
