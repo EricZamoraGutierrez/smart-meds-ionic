@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
-
-
+import { Firestore, collection, addDoc, query, where, getDocs, getDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-tab1',
@@ -13,23 +12,53 @@ export class Tab1Page implements OnInit {
 
   selectedTab: string = 'tab1';
 
-  email: string = "";
-  password: string = "";
 
-  constructor(private router:Router) {}
-ngOnInit(): void {
-    
-}
+  constructor(private router: Router, private firestore: Firestore) { }
+  ngOnInit(): void {
 
-  login() {
-    // Aquí puedes agregar la lógica de inicio de sesión
-    console.log('Correo electrónico:', this.email);
-    console.log('Contraseña:', this.password);
-
-    // Lógica adicional para realizar la autenticación, redirección, etc.
+    this.readPrescriptions();
   }
 
-  agregar(){
+
+  agregar() {
     this.router.navigate(['/agregar']);
+  }
+
+  data: any = [];
+
+  id: string = '';
+
+  async readPrescriptions() {
+
+    const ref = collection(this.firestore, 'Medicaciones');
+    const q = query(ref)
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+
+      console.log(doc.data());
+
+      this.data.push({
+        id: doc.data()['Detalles']['MedID'],
+        name: doc.data()['name'],
+        comment: doc.data()['Detalles']['comentario'],
+        interval: '',
+      }
+      );
+    });
+
+    const ref2 = collection(this.firestore, 'Prescripciones');
+    const q2 = query(ref2)
+    const querySnapshot2 = await getDocs(q2);
+    querySnapshot2.forEach((doc) => {
+      var i = 0;
+      for(i=0; i<this.data.length; i++){
+        if(this.data[i]['id'] == doc.data()['MedID']){
+          this.data[i]['interval'] = doc.data()['interval'];
+        }        
+      }
+
+    });
+
+    console.log(this.data);
   }
 }

@@ -26,7 +26,7 @@
     </div>
     <div class="alta">
       <ion-card>
-        <ion-card-header (click)="readMedicinesFromShelf('Alta')" (click)="toggleCard()">
+        <ion-card-header (click)="toggleCard()">
           <ion-card-title>Datos de la repisa alta</ion-card-title>
           <ion-card-title>Peso: g.</ion-card-title>
         </ion-card-header>
@@ -58,7 +58,7 @@
         <ion-card-content *ngIf="!expanded2">
 
           <!-- Repisa "Media" -->
-          <ion-button (click)="readMedicinesFromShelf('Media')">Mostrar datos</ion-button>
+          
           <ul>
             <li *ngFor="let medicine of dataRepisaMedia">
               <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
@@ -81,7 +81,7 @@
 
         <ion-card-content *ngIf="!expanded3">
           <!-- Repisa "Baja" -->
-          <ion-button (click)="readMedicinesFromShelf('Baja')">Mostrar datos</ion-button>
+          
           <ul>
             <li *ngFor="let medicine of dataRepisaBaja">
               <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>

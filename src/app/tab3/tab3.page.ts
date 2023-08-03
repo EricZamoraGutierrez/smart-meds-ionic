@@ -38,6 +38,13 @@ export class Tab3Page {
   public dataRepisaBaja: any[] = [];
   public dataRepisaMedia: any[] = [];
 
+  ngOnInit() {
+    this.readKit();
+    this.readMedicinesFromShelf('Alta');
+    this.readMedicinesFromShelf('Media');
+    this.readMedicinesFromShelf('Baja');
+  }
+
 
 
   // gets data from realtime database (medkit)

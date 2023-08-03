@@ -10,12 +10,14 @@
    </div>
     </ion-toolbar>
   </ion-header>
+
+
 <ion-content>
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/images/7500093753546_A.webp" />
+  <ion-card *ngFor="let data of data">
+    <!-- <img alt="Medicine" src="assets/images/7500093753546_A.webp" /> -->
     <ion-card-header>
-      <ion-card-title>Prescripcion Abue Rosa</ion-card-title>
-      <ion-card-subtitle>Ketorolaco cada 8 horas</ion-card-subtitle><img src="assets/images/pill.webp" alt="" style="width: 100px;height: auto;">
+      <ion-card-title> {{data.name}} cada {{data.interval}} horas</ion-card-title>
+      <ion-card-subtitle><img src="assets/images/pill.webp" alt="" style="width: 25px;height: 25px;"> {{data.comment}} </ion-card-subtitle>
     </ion-card-header>
     
   </ion-card>
