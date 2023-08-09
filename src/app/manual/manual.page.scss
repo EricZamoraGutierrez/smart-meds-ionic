@@ -14,7 +14,8 @@ img{
   
 }
 
-
-  .regresar{
-    padding: 31px;
-  }
+.bar{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
