@@ -114,9 +114,9 @@
             <h2>¿En qué repisa del botiqupin estará este medicamento?</h2>
           </ion-item>
           <ion-select id="repisaForm" formControlName="repisaForm" placeholder="Seleccione">
-            <ion-select-option>Baja</ion-select-option>
-            <ion-select-option>Media</ion-select-option>
             <ion-select-option>Alta</ion-select-option>
+            <ion-select-option>Media</ion-select-option>
+            <ion-select-option>Baja</ion-select-option>
           </ion-select>
 
           <ion-item>
@@ -133,7 +133,7 @@
       </ion-card>
     </div>
 
-    <ion-button style="display: block; margin: 0 auto;" [disabled]="!isFormValidGeneral()" (click)="submitForm()">Agregar</ion-button>
+    <ion-button style="display: block; margin: 0 auto;" [disabled]="!isFormValidGeneral()" (click)="submitForm()" (click)="redirectToHomePage()">Agregar</ion-button>
   </form>
 
   </ion-card>

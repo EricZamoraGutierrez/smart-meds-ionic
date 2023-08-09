@@ -7,7 +7,7 @@
   height: auto; /* Para mantener la proporción de la imagen */
  
    ">
-   </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -20,7 +20,7 @@
   <!-- Si la puerta está abierta o cerrada -->
   <p></p>
 
-  <ion-card>
+
     <div class="todo">
       <h1>Estado de la puerta: {{state}}</h1>
     </div>
@@ -35,12 +35,15 @@
 
           <!-- Repisa "Alta" -->
           <!-- Supongamos que esto es un desplegable oculto -->
-          <ol>
-            <li *ngFor="let medicine of dataRepisaAlta">
-              <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
-              <div> {{medicine.presen}}</div>
-              <div> {{medicine.Detalles.comentario}}</div>
-            </li>
+          <ol *ngFor="let medicine of dataRepisaAlta">
+            <div class="repalta">
+              <ion-card class="cardalta">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
           </ol>
 
         </ion-card-content>
@@ -58,14 +61,17 @@
         <ion-card-content *ngIf="!expanded2">
 
           <!-- Repisa "Media" -->
-          
-          <ul>
-            <li *ngFor="let medicine of dataRepisaMedia">
-              <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
-              <div> {{medicine.presen}}</div>
-              <div> {{medicine.Detalles.comentario}}</div>
-            </li>
-          </ul>
+
+          <ol *ngFor="let medicine of dataRepisaMedia">
+            <div class="repmedia">
+              <ion-card class="cardmedia">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
 
         </ion-card-content>
       </ion-card>
@@ -81,18 +87,23 @@
 
         <ion-card-content *ngIf="!expanded3">
           <!-- Repisa "Baja" -->
-          
-          <ul>
-            <li *ngFor="let medicine of dataRepisaBaja">
-              <div> {{medicine.name}}: {{medicine.Detalles.peso}} g.</div>
-              <div> {{medicine.presen}}</div>
-              <div> {{medicine.Detalles.comentario}}</div>
-            </li>
-          </ul>
+
+          <ol *ngFor="let medicine of dataRepisaBaja">
+            <div class="repbaja">
+              <ion-card class="cardbaja">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
+
+
         </ion-card-content>
       </ion-card>
     </div>
 
 
-  </ion-card>
+
 </ion-content>

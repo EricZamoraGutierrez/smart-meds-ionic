@@ -4,6 +4,7 @@ import { and } from 'firebase/firestore';
 import { PrescriptionStorageService } from '../services/prescription-storage.service';
 import { UserService } from '../services/user.service';
 import { Firestore, collection, addDoc, getFirestore } from '@angular/fire/firestore'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar',
@@ -23,7 +24,7 @@ export class AgregarPage implements OnInit {
 
   db = getFirestore();
 
-  constructor(private formBuilder: FormBuilder, private prescriptionStorage: PrescriptionStorageService,
+  constructor(private formBuilder: FormBuilder, private prescriptionStorage: PrescriptionStorageService, private router: Router,
     private firestore: Firestore, private userService: UserService) {
     this.hours = Array.from({ length: 24 }, (_, i) => i);
 
@@ -46,6 +47,13 @@ export class AgregarPage implements OnInit {
       comentario: ['', Validators.required],
     });
 
+  }
+
+  redirectToHomePage() {
+    setTimeout(() => {
+      this.router.navigate(['/tabs/tab1']); // Redirecciona a la página "home"
+    }, 2000);
+    
   }
   //User ID
   userId:string = "";
