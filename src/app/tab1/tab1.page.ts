@@ -18,6 +18,7 @@ export class Tab1Page {
 
   ionViewDidEnter() {
     this.readPrescriptions();
+    this.data = [];
   }
 
   agregar() {
