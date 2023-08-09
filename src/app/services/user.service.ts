@@ -36,7 +36,6 @@ export class UserService {
     querySnapshot.forEach((doc) => {
       this.UserId = doc.id;
     });
-    console.log(this.UserId);
     await Preferences.set({ key: 'userId', value: this.UserId });
   }
 
@@ -56,8 +55,7 @@ export class UserService {
     const storageRef = ref(storage, "images"+ file.name)
 
     uploadBytes(storageRef, file).then((snapshot) => {
-      console.log('Uploaded a blob or file!');
-      console.log(snapshot);
+      
     }, (error) => {
       console.log(error);
     });
@@ -66,7 +64,7 @@ export class UserService {
 
   async getProfilePicURL(picUrl:any) {
     const url = await getDownloadURL(ref(getStorage(), picUrl));
-    console.log(url);
+   
     return url;
   }
 
@@ -78,6 +76,5 @@ export class UserService {
       lastname: Apellido,
     };
     updateDoc(docref, data);
-    console.log("data updated for user:" + id);
   }
 } 

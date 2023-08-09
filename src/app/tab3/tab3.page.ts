@@ -13,7 +13,7 @@ export class Tab3Page {
   expanded: boolean = true;
   expanded2: boolean = true;
   expanded3: boolean = true;
-  
+
 
   toggleCard() {
     this.expanded = !this.expanded;
@@ -38,11 +38,14 @@ export class Tab3Page {
   public dataRepisaBaja: any[] = [];
   public dataRepisaMedia: any[] = [];
 
-  ngOnInit() {
+  ionViewDidEnter() {
     this.readKit();
     this.readMedicinesFromShelf('Alta');
     this.readMedicinesFromShelf('Media');
     this.readMedicinesFromShelf('Baja');
+    this.dataRepisaAlta = [];
+    this.dataRepisaBaja = [];
+    this.dataRepisaMedia = [];
   }
 
 
@@ -83,15 +86,12 @@ export class Tab3Page {
         switch (shelf) {
           case 'Alta':
             this.dataRepisaAlta.push(medicineData);
-            console.log(this.dataRepisaAlta);
             break;
           case 'Media':
             this.dataRepisaMedia.push(medicineData);
-            console.log(this.dataRepisaMedia);
             break;
           case 'Baja':
             this.dataRepisaBaja.push(medicineData);
-            console.log(this.dataRepisaBaja);
             break;
           case "default":
             break;

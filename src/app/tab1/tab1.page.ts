@@ -1,24 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
-import { Firestore, collection, addDoc, query, where, getDocs, getDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, query, where, getDocs, getDoc, deleteDoc, doc} from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page implements OnInit {
+export class Tab1Page {
 
   selectedTab: string = 'tab1';
 
 
   constructor(private router: Router, private firestore: Firestore) { }
-  ngOnInit(): void {
 
+
+  ionViewDidEnter() {
     this.readPrescriptions();
   }
-
 
   agregar() {
     this.router.navigate(['/agregar']);
@@ -34,8 +34,6 @@ export class Tab1Page implements OnInit {
     const q = query(ref)
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-
-      console.log(doc.data());
 
       this.data.push({
         id: doc.data()['Detalles']['MedID'],
@@ -56,9 +54,16 @@ export class Tab1Page implements OnInit {
           this.data[i]['interval'] = doc.data()['interval'];
         }        
       }
-
     });
 
-    console.log(this.data);
+  }
+
+
+  delete(id:any){
+    const ref = doc(this.firestore, 'Medicaciones', id);
+    deleteDoc(ref);
+    this.data = [];
+    this.readPrescriptions();
+
   }
 }
