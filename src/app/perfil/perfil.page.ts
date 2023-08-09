@@ -47,9 +47,7 @@ export class PerfilPage implements OnInit {
   userDoc: any;
   finishedLoading: boolean = false;
 
-  regresar() {
-    this.router.navigate(['/tabs/tab4']);
-  }
+ 
 
   displayImage(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -81,6 +79,10 @@ export class PerfilPage implements OnInit {
       console.log('Formulario enviado. Datos guardados:', this.formData);
       this.updateUserData(this.myForm.value.name, this.myForm.value.phone, this.myForm.value.lastname, this.userDoc, this.userID);
     }
+  }
+
+  regresar(){
+    this.router.navigate(['/tabs/tab4']);
   }
 
   isFormValid(): boolean {
