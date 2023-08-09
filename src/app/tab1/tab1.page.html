@@ -18,6 +18,7 @@
     <ion-card-header>
       <ion-card-title> {{data.name}} cada {{data.interval}} horas</ion-card-title>
       <ion-card-subtitle><img src="assets/images/pill.webp" alt="" style="width: 25px;height: 25px;"> {{data.comment}} </ion-card-subtitle>
+      <ion-button (click)="delete(data.id)">Borrar</ion-button>
     </ion-card-header>
     
   </ion-card>

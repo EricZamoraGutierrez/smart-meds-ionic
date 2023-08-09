@@ -30,7 +30,7 @@ export class PrescriptionStorageService {
 
   async addMedDetails(peso: any, repisa: any, contra: any, comentario: any, MedID: any) {
     const dbref =  doc(this.firestore, 'Medicaciones', MedID);
-    console.log(dbref);
+   
     return updateDoc(dbref, { Detalles: { peso: peso, repisa: repisa, contra: contra, comentario: comentario, MedID: MedID } });
   }
 
