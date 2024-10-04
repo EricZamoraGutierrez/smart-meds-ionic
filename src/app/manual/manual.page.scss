@@ -1,0 +1,21 @@
+ion-card{
+   border-radius: 30px;
+   ion-card-title{
+    margin-left: 15px;
+    text-align: center;
+    font-size: 26px;
+    margin: 10px 0 10px 0;
+   }
+}
+img{
+  width: 50%; /* Valor de ancho de la imagen en porcentaje */
+  height: auto;
+  margin-left: 25%;
+  
+}
+
+.bar{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+}

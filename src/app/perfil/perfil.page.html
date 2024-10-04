@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="bar">
+    <img src="assets/images/atras.png" (click)="regresar()" alt="" style="width: 30px; margin-left: 3%;">
+    <ion-title>Perfil</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="background-box"></div>
+
+  <div class="content-box">
+    <h1>Your profile</h1>
+    <div class="custom-file">
+      <input type="file" id="photo" name="photo" accept="image/*" (change)="displayImage($event)">
+      <label for="photo" class="file-label">
+        <span class="file-text">Cambiar foto de perfil</span>
+      </label>
+    </div>
+    <div class="profile-section">
+      <div class="image-preview" *ngIf="imageSource">
+        <img [src]="imageSource" alt="Vista previa de la imagen">
+      </div>
+    </div>
+    
+    <div class="form-wrapper">
+      <form [formGroup]="myForm">
+        <ion-item>
+          <ion-input
+            type="text"
+            id="name"
+            fill="solid"
+            label="Nombre"
+            labelPlacement="floating"
+            formControlName="name"
+            value="{{userData.name}}"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            type="lastname"
+            id="lastname"
+            fill="solid"
+            label="Apellido(s)"
+            labelPlacement="floating"
+            formControlName="lastname"
+            value="{{userData.lastname}}"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            type="email"
+            id="email"
+            fill="solid"
+            label="Correo"
+            labelPlacement="floating"
+            formControlName="email"
+            [readonly]="false"
+            value="{{userData.email}}"
+          ></ion-input>
+        </ion-item>
+
+        
+
+        <ion-item>
+          <ion-input
+            type="phone"
+            id="phone"
+            fill="solid"
+            label="Numero"
+            labelPlacement="floating"
+            formControlName="phone"
+            value="{{userData.phone}}"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" (click)="submitForm()" [disabled]="!isFormValid()">UPDATE</ion-button>
+
+      </form>
+    </div>
+  </div>
+</ion-content>
+<div class="regresar">
+</div>

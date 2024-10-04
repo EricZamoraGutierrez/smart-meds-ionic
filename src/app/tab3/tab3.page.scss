@@ -1,0 +1,113 @@
+ion-item {
+    --padding-start: 0;
+  }
+
+h1{
+  margin-left: 20px;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ol{
+  font-size: 18px;
+}
+
+ion-card{
+  border-radius: 15px;
+  border-color: rgb(172, 172, 172);
+  border-width: 2px;
+  border-style: solid;
+   box-shadow: none;
+}
+ion-card-content{
+  margin: -10px;
+}
+ion-card-header{
+  border-radius: 15px;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+ 
+}
+
+.agrupador{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+.linea{
+  height: 2px;
+  background-color: grey;
+}
+
+.alta{
+  ion-card-header{
+    background-color: #88a4d8;
+  }
+  
+}
+.repalta{
+  margin-left: -30px;
+}
+ .cardalta{
+  padding: 10px;
+  margin-left: -5px;
+  ion-card-title{
+    margin-bottom: 10px;
+  }
+
+}
+.media{
+  ion-card-header{
+    background-color: #88a4d8;
+  }
+  
+}
+.repmedia{
+  margin-left: -30px;
+}
+ .cardmedia{
+  padding: 10px;
+  margin-left: -5px;
+  ion-card-title{
+    margin-bottom: 10px;
+  }
+
+}
+
+.baja{
+  ion-card-header{
+    background-color: #88a4d8;
+  }
+  
+}
+.repbaja{
+  margin-left: -30px;
+}
+ .cardbaja{
+  padding: 10px;
+  margin-left: -5px;
+  ion-card-title{
+    margin-bottom: 10px;
+  }
+
+}
+
+.todo{
+ ion-input{
+    width: 80%;
+    margin-left: 5%;
+    margin-bottom: 6%;
+ }
+}
+
+.textimage{
+ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

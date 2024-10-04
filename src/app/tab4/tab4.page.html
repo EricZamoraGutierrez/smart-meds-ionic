@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="textimage">
+      <img src="assets/images/LogoSmartMeds.png" alt="" style="
+      
+      width: 40px; /* Tamaño fijo de la imagen */
+  height: auto; /* Para mantener la proporción de la imagen */
+ 
+   ">
+   </div>
+  </ion-toolbar>
+</ion-header>
+
+<div class="config">
+
+  <button (click)="perfil()" class="perfil">Perfil</button>
+
+  <button class="noti">Notificaciones</button>
+
+  <button class="temas">Apariencia</button>
+  
+  <button (click)="manual()" class="manual">Manual de instruccionnes</button>
+
+  <ion-button expand="full" (click)="cerrarsesion()">Cerrar sesion</ion-button>
+</div>
+
+<h1>Nuestras redes:</h1>
+<div class="redes">
+  <ion-row size="4">
+    <ion-col>
+    <a href="https://www.patreon.com/SmartMeds">
+      <img src="assets/images/Patreon_logo.svg.png" alt="patreon"></a>
+    </ion-col>
+    <ion-col>
+    <a (click)="copyToClipboard('smartmeds30@gmail.com')">
+      <img src="assets/images/email.png" alt="correo"></a>
+    </ion-col>
+    <ion-col>
+    <a href="https://www.facebook.com/profile.php?id=100094654482018">
+      <img src="assets/images/facebook.png" alt="facebook"></a>
+    </ion-col>
+    <ion-col>
+    <a href="https://twitter.com/SmartMedsMx">
+      <img src="assets/images/twitter.png" alt="twitter"></a>
+    </ion-col>
+  </ion-row>
+
+
+</div>

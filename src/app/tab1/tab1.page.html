@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <div class="textimage">
+      <img src="assets/images/LogoSmartMeds.png" alt="" style="
+      
+      width: 40px; /* Tamaño fijo de la imagen */
+  height: auto; /* Para mantener la proporción de la imagen */
+ 
+   ">
+   
+   </div>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+<ion-content>
+  <ion-card *ngFor="let data of data">
+    <!-- <img alt="Medicine" src="assets/images/7500093753546_A.webp" /> -->
+    <ion-card-header>
+      <ion-card-title style="display: flex; 
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 8px;"> {{data.name}} cada {{data.interval}} horas <img (click)="delete(data.id)"src="assets/images/eliminar.png" style="width: 20px; 
+        height: 20px; 
+        " alt=""></ion-card-title>
+      <ion-card-subtitle><img src="assets/images/pill.webp" alt="" style="width: 25px;height: 25px;"> {{data.comment}} </ion-card-subtitle>
+    </ion-card-header>
+    
+  </ion-card>
+
+ 
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="agregar()"
+    >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
 </ion-content>

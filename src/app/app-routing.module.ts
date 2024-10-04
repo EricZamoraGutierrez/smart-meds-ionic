@@ -5,7 +5,31 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'manual',
+    loadChildren: () => import('./manual/manual.module').then( m => m.ManualPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'agregar',
+    loadChildren: () => import('./agregar/agregar.module').then( m => m.AgregarPageModule)
+  },
+  {
+    path: 'leer',
+    loadChildren: () => import('./leer/leer.module').then( m => m.LeerPageModule)
   }
+
+
+
+
 ];
 @NgModule({
   imports: [

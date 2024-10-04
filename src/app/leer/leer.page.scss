@@ -1,0 +1,50 @@
+ion-item {
+    --padding-start: 0;
+  }
+
+h1{
+  margin-left: 20px;
+}
+
+ion-card{
+  border-radius: 30px;
+  border-color: rgb(172, 172, 172);
+  border-width: 2px;
+  border-style: solid;
+}
+
+ion-card-header{
+  border-radius: 30px;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.general{
+  ion-card-header{
+    background-color: #88a4d8;
+  }
+  
+}
+
+.tiempo{
+  ion-card-header{
+    background-color: #88a4d8;
+  }
+  
+}
+
+.consumo{
+  ion-card-header{
+    background-color: #88a4d8;
+  }
+}
+
+
+.todo{
+ ion-input{
+    width: 80%;
+    margin-left: 5%;
+    margin-bottom: 6%;
+ }
+}
