@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'leer',
-    loadChildren: () => import('./leer/leer.module').then( m => m.LeerPageModule)
+    loadChildren: () => import('./menu/leer.module').then( m => m.LeerPageModule)
   }
 
 
