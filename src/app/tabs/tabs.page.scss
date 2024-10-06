@@ -45,17 +45,17 @@ img {
     z-index: -1;
   }
   
-  .custom-tab-bar ion-tab-button.ion-selected::before {
-    width: 150%; 
-    height: 150%;/* Cubrirá el ancho completo del botón seleccionado */
-  }
+  // .custom-tab-bar ion-tab-button.ion-selected::before {
+  //   width: 150%; 
+  //   height: 150%;/* Cubrirá el ancho completo del botón seleccionado */
+  // }
 
 
 ion-tab-button {
     --background: none;
-    --color-selected: #3880ff;
+    --color-selected: #FFFFFF;
     --color-selected-rgb: 56, 128, 255;
-    --color: #ffffff;
+    --color: #0A72BB;
     --color-rgb: 34, 34, 34;
 
 }
