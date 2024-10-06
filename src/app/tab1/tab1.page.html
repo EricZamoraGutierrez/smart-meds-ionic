@@ -38,9 +38,7 @@
 </ion-content> -->
 <ion-content class="ion-padding">
 
-   <div class="class logo">
-      <img src="assets/images/LogoSmartMeds.png" alt="Logo" class="header-image" style="height: 40px;"/>
-    </div>
+  
       
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -49,6 +47,10 @@
       </ion-button>
     </ion-buttons>
 
+ <div class="class logo">
+      <img src="assets/images/LogoSmartMeds.png" alt="Logo" class="header-image" style="height: 40px;"/>
+    </div>
+    
     <ion-buttons slot="end">
       <ion-button>
         <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
@@ -59,22 +61,22 @@
   <div class="menu-section">
     <h2>Menú</h2>
     <div class="menu-grid">
-      <ion-button class="menu-button" expand="block">
+      <ion-card class="menu-card" expand="block">
         <ion-icon name="medkit-outline"></ion-icon>
         <ion-label>Recetas</ion-label>
-      </ion-button>
-      <ion-button class="menu-button" expand="block">
+      </ion-card>
+      <ion-card class="menu-card" expand="block">
         <ion-icon name="briefcase-outline"></ion-icon>
         <ion-label>Smart-Kit</ion-label>
-      </ion-button>
-      <ion-button class="menu-button" expand="block">
+      </ion-card>
+      <ion-card class="menu-card" expand="block">
         <ion-icon name="person-outline"></ion-icon>
         <ion-label>Perfil</ion-label>
-      </ion-button>
-      <ion-button class="menu-button" expand="block">
+      </ion-card>
+      <ion-card class="menu-card" expand="block">
         <ion-icon name="help-circle-outline"></ion-icon>
         <ion-label>Ayuda</ion-label>
-      </ion-button>
+      </ion-card>
     </div>
   </div>
 

@@ -81,12 +81,14 @@ h2 {
   border-radius: 15px;
   border: 2px solid #0c487a;
   color: #0c487a;
+ 
 }
 
 .menu-button ion-icon {
   font-size: 66px;
   margin-bottom: 10px;
   color: #0c487a;
+
 }
 
 .menu-button ion-label {
@@ -95,3 +97,8 @@ h2 {
   color: #0c487a;
 }
 
+ion-card{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
