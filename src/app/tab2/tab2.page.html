@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
   </ion-toolbar>
 </ion-header>
@@ -226,4 +226,75 @@ helperText="Ejemplo: 08:00"
 </ion-card>
 </ion-content>
 
+ -->
+<ion-toolbar>
 
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back"></ion-icon>
+    </ion-buttons>
+    <h2>Recetas</h2>
+ 
+</ion-toolbar>
+
+ <!-- <ion-content>
+
+  <ion-segment value="3">
+    <ion-segment-button value="Completas">
+      <ion-label>Completadas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Nuevas">
+      <ion-label>Nuevas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Canceladas">
+      <ion-label>Canceladas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-content> -->
+
+
+
+
+<ion-content>
+
+  <ion-segment mode="ios" value="complete">
+    <ion-segment-button value="complete">
+      <ion-label>Completas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="upcoming">
+      <ion-label>Nuevas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="cancelled">
+      <ion-label>Canceladas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <ion-card>
+      <ion-item>
+        <ion-icon name="medkit-outline" slot="start"></ion-icon>
+        <ion-label>
+          <h2>Ketorolaco</h2>
+          <p>Uso: Anti-inflamatorio</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-card-content>
+        <p><strong>Comentarios:</strong> </p><br>
+        <p>ABUE TOMA TUS PASTILLAS O TE VAS CON MAMA COCO!!!!!</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+          <ion-chip>
+            <ion-label>Mg: 30</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>2 pastillas</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>Consumo: Cada 8 horas</ion-label>
+          </ion-chip>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
