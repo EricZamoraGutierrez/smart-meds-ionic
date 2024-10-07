@@ -5,6 +5,8 @@ import { PrescriptionStorageService } from '../services/prescription-storage.ser
 import { UserService } from '../services/user.service';
 import { Firestore, collection, addDoc, getFirestore } from '@angular/fire/firestore'
 import { Router } from '@angular/router';
+import { register } from 'swiper/element';
+register();
 
 @Component({
   selector: 'app-agregar',
