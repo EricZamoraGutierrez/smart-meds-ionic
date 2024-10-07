@@ -1,5 +1,5 @@
 import { IonicModule } from '@ionic/angular';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgregarPage } from './agregar.page';
@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { AgregarPageRoutingModule } from './agregar-routing.module';
+import { register } from 'swiper/element/bundle';
 
 @NgModule({
   imports: [
@@ -15,8 +16,10 @@ import { AgregarPageRoutingModule } from './agregar-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     AgregarPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  declarations: [AgregarPage]
+  declarations: [AgregarPage],
+  
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AgregarPageModule {}
