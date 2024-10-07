@@ -11,7 +11,11 @@ import { Router } from '@angular/router';
   templateUrl: './agregar.page.html',
   styleUrls: ['./agregar.page.scss'],
 })
+
+
+
 export class AgregarPage implements OnInit {
+  
   hours: number[];
   myFormGeneral: FormGroup;
   formDataGeneral: any[] = [];
@@ -119,6 +123,8 @@ export class AgregarPage implements OnInit {
     this.expanded4 = !this.expanded4;
   }
 
+  
+
   //Aqui empieza mi desvergue
 
   async savePrescription() {
@@ -153,3 +159,4 @@ export class AgregarPage implements OnInit {
 
 
 }
+

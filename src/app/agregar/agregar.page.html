@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Nueva receta</ion-title>
   </ion-toolbar>
@@ -42,10 +42,10 @@
           </div>
 
           <div class="presentacion">
-            <!-- <ion-item>
+            <ion-item>
               <h2>¿Cual es la presentacion del medicamento?</h2>
             </ion-item>
-            <ion-input id="presen" formControlName="presen" type="text" fill="solid" placeholder="Presentacion" helperText="Ejemplo: Caja"></ion-input> -->
+            <ion-input id="presen" formControlName="presen" type="text" fill="solid" placeholder="Presentacion" helperText="Ejemplo: Caja"></ion-input> 
             <ion-item>
               <label>Presentacion del medicamento</label>
               <ion-select id="presenForm" formControlName="presenForm" placeholder="Seleccione">
@@ -137,4 +137,32 @@
   </form>
 
   </ion-card>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inline Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-button expand="block">Open</ion-button>
+  <ion-modal>
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button>Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

@@ -5,10 +5,9 @@
 
 <ion-content>
   <ng-container *ngIf="selectedTab === 'tab1'">
-    <ion-card>
-      <ion-card-content>
+
         <!-- Contenido de la pestaña 1 -->
-        <img src="assets/images/5087579.png" alt="" />
+        <!-- <img src="assets/images/5087579.png" alt="" />
 
         <div class="correo">
           <ion-input
@@ -44,15 +43,45 @@
           message="Cargando..."
           [duration]="2000"
           spinner="circles"
-        ></ion-loading>
-      </ion-card-content>
-    </ion-card>
+        ></ion-loading> -->
+
+        <ion-card>
+
+            <h2 class="login-title">Iniciar sesion</h2>
+            <p class="login-subtitle">Inicia sesion con tu correo y contraseña</p>
+        
+            <ion-item>
+              <ion-label position="stacked">Correo</ion-label>
+              <ion-input placeholder="ejemplo@gmail"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label position="stacked">Contraseña</ion-label>
+              <ion-input placeholder="********"></ion-input>
+              <ion-button fill="clear" slot="end">
+                <ion-icon name="eye"></ion-icon>
+              </ion-button>
+            </ion-item>
+        
+            <div class="forgot-password">
+              <h6>¿Olvidaste tu contraseña?</h6>
+            </div>
+        
+            <ion-button shape="round" fill="clear" class="login-button">Acceder</ion-button>
+        
+            <div class="signup-link">
+              <p>¿Aun no tienes una cuenta? Registrate</p>
+            </div>
+   </ion-card>
+
+ 
+
   </ng-container>
 
   <ng-container *ngIf="selectedTab === 'tab2'">
     <ion-card>
-      <ion-card-content>
-        <!-- Contenido de la pestaña 2 -->
+      <!-- <ion-card-content>
+        Contenido de la pestaña 2
 
         <img src="assets/images/5087579.png" alt="" />
         <div class="email" [ngClass]="{'show':show,'hide': !show}">
@@ -134,6 +163,49 @@
             spinner="circles"
           ></ion-loading>
         </div>
-      </ion-card-content>
-    </ion-card> </ng-container
+      </ion-card-content> -->
+
+      <h2 class="login-title">Registrarse</h2>
+            <p class="login-subtitle">Registrate con los datos para tu cuenta</p>
+
+            <ion-item>
+              <ion-label position="stacked">Nombres</ion-label>
+              <ion-input placeholder="Juan Perez"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Apellidos</ion-label>
+              <ion-input placeholder="Gonzales Barreno"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label position="stacked">Correo</ion-label>
+              <ion-input placeholder="ejemplo@gmail"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Numero</ion-label>
+              <ion-input type="tel" placeholder="585-5663-78-74"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label position="stacked">Contraseña</ion-label>
+              <ion-input placeholder="********"></ion-input>
+              <ion-button fill="clear" slot="end">
+                <ion-icon name="eye"></ion-icon>
+              </ion-button>
+            </ion-item>
+        
+            <div class="forgot-password">
+              <p>Aqui puedes leer nuestros</p><h6>Terminos y Condiciones</h6>
+            </div>
+        
+            <ion-button shape="round" fill="clear" class="login-button">Crear cuenta</ion-button>
+        
+            <div class="signup-link">
+              <p>¿Ya tienes una cuenta? Accede</p>
+            </div>
+
+    </ion-card> 
+    </ng-container
 ></ion-content>
