@@ -1,7 +1,13 @@
 // ion-item {
 //     --padding-start: 0;
 //   }
+// ion-item {
+//     --padding-start: 0;
+//   }
 
+// h1{
+//   margin-left: 20px;
+// }
 // h1{
 //   margin-left: 20px;
 // }
@@ -71,5 +77,29 @@
 // }
 
 swiper-container{
+  border-color: #0c487a;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 30px;
+  padding: 20px;
   margin: 20px;
 }
+
+ion-toolbar{
+  padding: 20px 0 0 0;
+  text-align: center;
+  color: #0c487a;
+}
+ion-button{
+  width: 80%;
+
+}
+
+ion-content{
+  text-align: center;
+  justify-content: left;
+  align-items: center;
+  }
+  div{
+    margin-bottom: 20px;
+  }

@@ -3,6 +3,8 @@ import { Database, getDatabase, ref } from '@angular/fire/database';
 import { get } from 'firebase/database';
 import { Firestore, collection, addDoc, query, where, getDocs, getDoc } from '@angular/fire/firestore';
 import { NotificationsService } from '../services/notifications.service';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-tab3',
@@ -26,9 +28,9 @@ export class Tab3Page {
   toggleCard3() {
     this.expanded3 = !this.expanded3;
   }
+  
 
-
-  constructor(private firestore: Firestore, private notifications: NotificationsService) { }
+  constructor(private firestore: Firestore,private navCtrl: NavController, private notifications: NotificationsService) { }
   public db = getDatabase()
   public reference = ref(this.db, 'Peso')
   public stateRef = ref(this.db, 'Puerta')
@@ -37,7 +39,10 @@ export class Tab3Page {
   public dataRepisaAlta: any[] = [];
   public dataRepisaBaja: any[] = [];
   public dataRepisaMedia: any[] = [];
-
+  
+goBack() {
+    this.navCtrl.back();
+  }
   ionViewDidEnter() {
     this.readKit();
     this.readMedicinesFromShelf('Alta');

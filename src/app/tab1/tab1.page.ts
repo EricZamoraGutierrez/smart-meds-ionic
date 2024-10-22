@@ -16,13 +16,20 @@ export class Tab1Page {
   constructor(private router: Router, private firestore: Firestore) { }
 
 
+
   ionViewDidEnter() {
     this.readPrescriptions();
     this.data = [];
   }
-
-  agregar() {
-    this.router.navigate(['/agregar']);
+//desmadre nuevo
+  recetas() {
+    this.router.navigate(['/tabs/tab2']);
+  }
+  perfil() {
+    this.router.navigate(['/tabs/tab4']);
+  }
+  config() {
+    this.router.navigate(['/tabs/tab3']);
   }
 
   data: any = [];
