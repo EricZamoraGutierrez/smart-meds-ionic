@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-tab2',
@@ -6,8 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  selectedSegment: string = 'option1';  // Valor predeterminado
 
-  constructor() {this.expanded = true, this.expanded2 = true, this.expanded3 = true, this.expanded4 = true; }
+  constructor(private router: Router, private navCtrl: NavController) {this.expanded = true, this.expanded2 = true, this.expanded3 = true, this.expanded4 = true; }
 
   expanded: boolean = false;
   expanded2: boolean = false;
@@ -29,4 +33,18 @@ export class Tab2Page {
   toggleCard4() {
     this.expanded4 = !this.expanded4;
   }
+
+  redirectToAgregar() {
+    this.router.navigateByUrl('/agregar');
+  }
+  
+  segmentChanged(event: any) {
+    this.selectedSegment = event.detail.value;  // Obtener el valor seleccionado
+    console.log('Segment cambiado a:', this.selectedSegment);
+  }
+
+  goBack() {
+    this.navCtrl.back();
+  }
 }
+

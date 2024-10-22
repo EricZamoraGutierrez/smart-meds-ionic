@@ -229,14 +229,16 @@ helperText="Ejemplo: 08:00"
  -->
 <ion-toolbar>
 
-    <ion-buttons slot="start">
-      <ion-icon name="chevron-back"></ion-icon>
-    </ion-buttons>
-    <h2>Recetas</h2>
- 
+  <ion-buttons (click)="goBack()" slot="start">
+    <ion-icon name="chevron-back"></ion-icon>
+  </ion-buttons>
+  <h2>Recetas</h2>
+  <ion-buttons (click)="redirectToAgregar()" slot="end">
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-buttons>
 </ion-toolbar>
 
- <!-- <ion-content>
+<!-- <ion-content>
 
   <ion-segment value="3">
     <ion-segment-button value="Completas">
@@ -252,49 +254,104 @@ helperText="Ejemplo: 08:00"
 
 </ion-content> -->
 
-
-
-
 <ion-content>
 
-  <ion-segment mode="ios" value="complete">
-    <ion-segment-button value="complete">
+  <ion-segment mode="ios" value="option1" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="option2">
       <ion-label>Completas</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="upcoming">
+    <ion-segment-button value="option1">
       <ion-label>Nuevas</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="cancelled">
+    <ion-segment-button value="option3">
       <ion-label>Canceladas</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <ion-list>
-    <ion-card>
-      <ion-item>
-        <ion-icon name="medkit-outline" slot="start"></ion-icon>
-        <ion-label>
-          <h2>Ketorolaco</h2>
-          <p>Uso: Anti-inflamatorio</p>
-        </ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        <p><strong>Comentarios:</strong> </p><br>
-        <p>ABUE TOMA TUS PASTILLAS O TE VAS CON MAMA COCO!!!!!</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-          <ion-chip>
+  <div *ngIf="selectedSegment === 'option2'">
+    <ion-list>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="medkit-outline" slot="start"></ion-icon>
+          <ion-label>
+            <h2>Ketorolaco</h2>
+            <p>Uso: Anti-inflamatorio</p>
+          </ion-label>
+        </ion-item>
+        
+  
+        <ion-card-content>
+          <p><strong>Comentarios:</strong> </p><br>
+          <p>ABUE TOMA TUS PASTILLAS O TE V2qqqqqqqqqqqqqqqqAS CON MAMA COCO!!!!!</p>
+          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+  
             <ion-label>Mg: 30</ion-label>
-          </ion-chip>
-          <ion-chip>
+  
             <ion-label>2 pastillas</ion-label>
-          </ion-chip>
-          <ion-chip>
+  
             <ion-label>Consumo: Cada 8 horas</ion-label>
-          </ion-chip>
-        </div>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+
+  <div *ngIf="selectedSegment === 'option1'">
+    <ion-list>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="medkit-outline" slot="start"></ion-icon>
+          <ion-label>
+            <h2>Ketorolaco</h2>
+            <p>Uso: Anti-inflamatorio</p>
+          </ion-label>
+        </ion-item>
+        
+  
+        <ion-card-content>
+          <p><strong>Comentarios:</strong> </p><br>
+          <p>ABUE TOMA TUS PASTILLAS O TEyyyyyyyyyyyyyyyyyy VAS CON MAMA COCO!!!!!</p>
+          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+  
+            <ion-label>Mg: 30</ion-label>
+  
+            <ion-label>2 pastillas</ion-label>
+  
+            <ion-label>Consumo: Cada 8 horas</ion-label>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+
+  <div *ngIf="selectedSegment === 'option3'">
+    <ion-list>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="medkit-outline" slot="start"></ion-icon>
+          <ion-label>
+            <h2>Ketorolaco</h2>
+            <p>Uso: Anti-inflamatorio</p>
+          </ion-label>
+        </ion-item>
+        
+  
+        <ion-card-content>
+          <p><strong>Comentarios:</strong> </p><br>
+          <p>ABUE TOMA TUS PASTILLAS Oaaaaaaaaaaaaaaaaaa TE VAS CON MAMA COCO!!!!!</p>
+          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+  
+            <ion-label>Mg: 30</ion-label>
+  
+            <ion-label>2 pastillas</ion-label>
+  
+            <ion-label>Consumo: Cada 8 horas</ion-label>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+  
+ 
 
 </ion-content>

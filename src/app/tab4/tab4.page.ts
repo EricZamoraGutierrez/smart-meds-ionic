@@ -4,6 +4,8 @@ import { LoginPage } from '../login/login.page';
 import { LoginCheckService } from '../services/login-check.service';
 import { Clipboard } from '@capacitor/clipboard';
 import { Toast } from '@capacitor/toast';
+import { NavController } from '@ionic/angular';
+
 
 
 @Component({
@@ -13,7 +15,11 @@ import { Toast } from '@capacitor/toast';
 })
 export class Tab4Page implements OnInit {
 
-  constructor(private router: Router, private login: LoginCheckService) { }
+  constructor(private router: Router, private navCtrl: NavController, private login: LoginCheckService) { }
+
+  goBack() {
+    this.navCtrl.back();
+  }
 
   cerrarsesion(){
     this.router.navigate(['/login']);

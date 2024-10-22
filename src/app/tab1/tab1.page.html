@@ -41,7 +41,7 @@
   
       
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons (click)="config()" slot="start">
       <ion-button>
         <ion-icon slot="icon-only" name="settings" style="font-size: 38px;"></ion-icon>
       </ion-button>
@@ -62,7 +62,7 @@
     <div class="menu-section">
       <h2>Menú</h2>
       <div class="menu-grid">
-        <ion-card class="menu-card">
+        <ion-card (click)="recetas()" class="menu-card">
           <ion-icon src="assets/icon/pill2.svg"></ion-icon>
           <ion-label>Recetas</ion-label>
         </ion-card>
@@ -70,7 +70,7 @@
           <ion-icon name="medkit"></ion-icon>
           <ion-label>Smart-Kit</ion-label>
         </ion-card>
-        <ion-card class="menu-card">
+        <ion-card (click)="perfil()" class="menu-card">
           <ion-icon name="person"></ion-icon>
           <ion-label>Perfil</ion-label>
         </ion-card>

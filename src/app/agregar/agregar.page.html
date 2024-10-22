@@ -141,41 +141,44 @@
 
 <ion-toolbar>
   <ion-buttons slot="start">
-    <ion-button>
-      <ion-icon slot="icon-only" name="chevron-back" style="font-size: 38px;"></ion-icon>
+    <ion-button (click)="goBack()">
+      <ion-icon slot="icon-only" name="chevron-back"
+        class="chevron-icon"></ion-icon>
     </ion-button>
   </ion-buttons>
 
-<div class="titulo">
-   <h2>Nueva receta</h2>
+  <div class="titulo">
+    <h2>Nueva receta</h2>
   </div>
-
 </ion-toolbar>
- 
+
 <ion-content>
-   <ion-button>
-      Guardar
-    </ion-button>
+  <ion-button>
+    Guardar
+  </ion-button>
 
   <swiper-container>
-    <swiper-slide >
+    <swiper-slide>
       <div class="nombre">
         <ion-item>
-          <h2>¿Cual es el nombre del medicamento?</h2>
+          <h4>¿Cual es el nombre del medicamento?</h4>
         </ion-item>
-        <ion-input type="text" fill="solid" Placeholder="Medicamento" helperText="Ejemplo: Paracetamol"></ion-input>
+        <ion-input type="text" fill="solid" Placeholder="Medicamento"
+          helperText="Ejemplo: Paracetamol"></ion-input>
       </div>
 
       <div class="dosis">
         <ion-item>
-          <h2>¿Cual es la dosis que se va a tomar?</h2>
+          <h4>¿Cual es la dosis que se va a tomar?</h4>
         </ion-item>
-        <ion-input   type="number" fill="solid" Placeholder="Dosis" helperText="Ejemplo: 1 pastilla"></ion-input>
+        <ion-input type="number" fill="solid" Placeholder="Dosis"
+          helperText="Ejemplo: 1 pastilla"></ion-input>
       </div>
-        <div class="medida">
+      <div class="medida">
         <ion-item>
-          <h2>Unidad de medida del medicamento</h2>
-          <ion-select fill="solid" justify="space-between" placeholder="Seleccione">
+          <h4>Unidad de medida del medicamento</h4>
+          <ion-select fill="solid" justify="space-between"
+            placeholder="Seleccione">
             <ion-select-option>Miligramo(s)</ion-select-option>
             <ion-select-option>Gramo(s)</ion-select-option>
             <ion-select-option>Mililitro(s)</ion-select-option>
@@ -185,12 +188,14 @@
 
       <div class="presentacion">
         <ion-item>
-          <h2>¿Cual es la presentacion del medicamento?</h2>
+          <h4>¿Cual es la presentacion del medicamento?</h4>
         </ion-item>
-        <ion-input  type="text" fill="solid" placeholder="Presentacion" helperText="Ejemplo: Caja"></ion-input> 
+        <ion-input type="text" fill="solid" placeholder="Presentacion"
+          helperText="Ejemplo: Caja"></ion-input>
         <ion-item>
-          <h2>Presentacion del medicamento</h2>
-          <ion-select  fill="solid" justify="spacwe-between" placeholder="Seleccione">
+          <h4>Presentacion del medicamento</h4>
+          <ion-select fill="solid" justify="spacwe-between"
+            placeholder="Seleccione">
             <ion-select-option>Pastilla</ion-select-option>
             <ion-select-option>Capsula</ion-select-option>
             <ion-select-option>Ampolleta</ion-select-option>
@@ -200,14 +205,11 @@
         </ion-item>
       </div>
     </swiper-slide>
-
     <swiper-slide>
       Slide 2
     </swiper-slide>
-
     <swiper-slide>
       Slide 3
     </swiper-slide>
-
   </swiper-container>
 </ion-content>
