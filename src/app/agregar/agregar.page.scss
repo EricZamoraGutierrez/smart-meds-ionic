@@ -86,9 +86,9 @@ swiper-container{
 }
 
 ion-toolbar{
-  padding: 20px 0 0 0;
   text-align: center;
   color: #0c487a;
+
 }
 ion-button{
   width: 80%;
@@ -102,4 +102,9 @@ ion-content{
   }
   div{
     margin-bottom: 20px;
+  }
+
+  ion-card{
+    box-shadow: none;
+    margin: -10px;
   }
