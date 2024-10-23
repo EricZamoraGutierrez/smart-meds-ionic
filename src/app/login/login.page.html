@@ -6,7 +6,7 @@
 <ion-content>
   <ng-container *ngIf="selectedTab === 'tab1'">
 
-        <!-- Contenido de la pestaña 1 -->
+        <!-- Contenido de la pestaña 1
         <img src="assets/images/5087579.png" alt="" />
 
         <div class="correo">
@@ -43,22 +43,37 @@
           message="Cargando..."
           [duration]="2000"
           spinner="circles"
-        ></ion-loading>
+        ></ion-loading> -->
 
-        <!-- <ion-card>
+        <ion-card>
 
             <h2 class="login-title">Iniciar sesion</h2>
             <p class="login-subtitle">Inicia sesion con tu correo y contraseña</p>
         
             <ion-item>
-              <ion-label position="stacked">Correo</ion-label>
-              <ion-input placeholder="ejemplo@gmail"></ion-input>
+              <ion-input
+            type="email"
+            fill="solid"
+            label="Email"
+            labelPlacement="floating"
+            id="email"
+            [(ngModel)]="login.email"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"
+            required
+          ></ion-input>
             </ion-item>
         
             <ion-item>
-              <ion-label position="stacked">Contraseña</ion-label>
-              <ion-input placeholder="********"></ion-input>
-              <ion-button fill="clear" slot="end">
+              <ion-input
+            type=""
+            fill="solid"
+            label="Contraseña"
+            labelPlacement="floating"
+            [(ngModel)]="login.pass"
+            minlength="8"
+            required
+          ></ion-input>
+              <ion-button  fill="clear" slot="end">
                 <ion-icon name="eye"></ion-icon>
               </ion-button>
             </ion-item>
@@ -67,7 +82,8 @@
               <h6>¿Olvidaste tu contraseña?</h6>
             </div>
         
-            <ion-button shape="round" fill="clear" class="login-button">Acceder</ion-button>
+            <ion-button id="open-loading"
+            (click)="loginUser(login.email, login.pass)" shape="round" fill="clear" class="login-button">Acceder</ion-button>
         
             <div class="signup-link">
               <p>¿Aun no tienes una cuenta? Registrate</p>
@@ -79,8 +95,8 @@
   </ng-container>
 
   <ng-container *ngIf="selectedTab === 'tab2'">
-    <ion-card> -->
-      <ion-card-content>
+    <ion-card>
+      <!-- <ion-card-content>
         Contenido de la pestaña 2
 
         <img src="assets/images/5087579.png" alt="" />
@@ -163,34 +179,63 @@
             spinner="circles"
           ></ion-loading>
         </div>
-      </ion-card-content>
+      </ion-card-content> -->
 
-      <!-- <h2 class="login-title">Registrarse</h2>
+      <h2 class="login-title">Registrarse</h2>
             <p class="login-subtitle">Registrate con los datos para tu cuenta</p>
 
             <ion-item>
-              <ion-label position="stacked">Nombres</ion-label>
-              <ion-input placeholder="Juan Perez"></ion-input>
+              <ion-input
+              type="text"
+              fill="solid"
+              label="Nombre"
+              labelPlacement="floating"
+              [(ngModel)]="userData.name"
+            ></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label position="stacked">Apellidos</ion-label>
-              <ion-input placeholder="Gonzales Barreno"></ion-input>
+              <ion-input
+              type="text"
+              fill="solid"
+              label="Apellido"
+              labelPlacement="floating"
+              [(ngModel)]="userData.lastname"
+            ></ion-input>
             </ion-item>
         
             <ion-item>
-              <ion-label position="stacked">Correo</ion-label>
-              <ion-input placeholder="ejemplo@gmail"></ion-input>
+              <ion-input
+              type="email"
+              fill="solid"
+              label="Email"
+              labelPlacement="floating"
+              [(ngModel)]="register.email"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"
+              required
+            ></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label position="stacked">Numero</ion-label>
-              <ion-input type="tel" placeholder="585-5663-78-74"></ion-input>
+              <ion-input
+              type="text"
+              fill="solid"
+              label="Telefono"
+              labelPlacement="floating"
+              [(ngModel)]="userData.phone"
+            ></ion-input>
             </ion-item>
         
             <ion-item>
-              <ion-label position="stacked">Contraseña</ion-label>
-              <ion-input placeholder="********"></ion-input>
+              <ion-input
+              type="password"
+              fill="solid"
+              label="Contraseña"
+              labelPlacement="floating"
+              [(ngModel)]="register.pass"
+              minlength="8"
+              required
+            ></ion-input>
               <ion-button fill="clear" slot="end">
                 <ion-icon name="eye"></ion-icon>
               </ion-button>
@@ -208,4 +253,4 @@
 
     </ion-card> 
     </ng-container
-></ion-content> -->
+></ion-content>
