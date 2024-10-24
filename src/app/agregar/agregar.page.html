@@ -149,14 +149,15 @@
     <h2>Nueva receta</h2>
   </div>
   
-  <ion-button style="display: block; margin: 0 auto;" [disabled]="!isFormValidGeneral()" (click)="submitForm()" (click)="redirectToHomePage()">Agregar</ion-button>
+  <ion-button style="display: block; margin: 0 auto;" [enable]="!isFormValidGeneral()" (click)="submitForm()">Agregar</ion-button>
 </ion-toolbar>
 
 <ion-content>
   
-
+<!-- poner id y formcontrolname -->
   <swiper-container>
     <swiper-slide>
+      <form [formGroup]="myFormGeneral">
       <div class="nombre">
         <h2>Datos generales</h2>
           <p>Datos como nombre, dosis, caracteristicas.</p>
@@ -204,6 +205,7 @@
           </ion-select>
         </ion-item>
       </div>
+    </form>
     </swiper-slide>
 
 
