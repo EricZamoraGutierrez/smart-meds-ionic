@@ -123,6 +123,7 @@ ion-icon{
     height: 30px;
 }
 
-ion-input{
+ion-input.custom{
     font-size: 18px;
+    --background: none;
 }

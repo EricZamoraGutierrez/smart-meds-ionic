@@ -55,6 +55,7 @@
             type="email"
             fill="solid"
             label="Email"
+            class="custom"
             labelPlacement="floating"
             id="email"
             [(ngModel)]="login.email"
@@ -65,9 +66,10 @@
         
             <ion-item>
               <ion-input
-            type=""
+            type="password"
             fill="solid"
             label="Contraseña"
+            class="custom"
             labelPlacement="floating"
             [(ngModel)]="login.pass"
             minlength="8"
@@ -189,6 +191,7 @@
               type="text"
               fill="solid"
               label="Nombre"
+              class="custom"
               labelPlacement="floating"
               [(ngModel)]="userData.name"
             ></ion-input>
@@ -199,6 +202,7 @@
               type="text"
               fill="solid"
               label="Apellido"
+              class="custom"
               labelPlacement="floating"
               [(ngModel)]="userData.lastname"
             ></ion-input>
@@ -209,6 +213,7 @@
               type="email"
               fill="solid"
               label="Email"
+              class="custom"
               labelPlacement="floating"
               [(ngModel)]="register.email"
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"
@@ -221,6 +226,7 @@
               type="text"
               fill="solid"
               label="Telefono"
+              class="custom"
               labelPlacement="floating"
               [(ngModel)]="userData.phone"
             ></ion-input>
@@ -231,6 +237,7 @@
               type="password"
               fill="solid"
               label="Contraseña"
+              class="custom"
               labelPlacement="floating"
               [(ngModel)]="register.pass"
               minlength="8"
