@@ -6,6 +6,7 @@ import { getFirestore } from 'firebase/firestore';
 import { Router } from '@angular/router';
 import { error } from 'console';
 import { getBlob, getBytes} from 'firebase/storage';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perfil',
@@ -18,15 +19,16 @@ export class PerfilPage implements OnInit {
   imageSource: string | ArrayBuffer | null = null;
   formData: any[] = []; // Arreglo para almacenar los datos del formulario
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private firestore: Firestore, private router: Router) {
+  constructor(private navCtrl: NavController, private formBuilder: FormBuilder, private userService: UserService, private firestore: Firestore, private router: Router) {
     this.myForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required]],
       // password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.[a-z])(?=.[A-Z]).{8,}$/)]],
       lastname: ['', Validators.required],
       phone: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.[a-z])(?=.[A-Z]).{8,}$/)]],
     });
-
+   
   }
 
   ngOnInit(): void {
@@ -40,14 +42,16 @@ export class PerfilPage implements OnInit {
     email: "",
     lastname: "",
     phone: "",
-    //lastname
+    password:"",
   }
   userID: any;
   ProfilePic = "";
   userDoc: any;
   finishedLoading: boolean = false;
 
- 
+  goBack() {
+    this.navCtrl.back();
+  }
 
   displayImage(event: Event): void {
     const input = event.target as HTMLInputElement;

@@ -26,7 +26,7 @@ export class Tab1Page {
     this.router.navigate(['/tabs/tab2']);
   }
   perfil() {
-    this.router.navigate(['/tabs/tab4']);
+    this.router.navigate(['/perfil']);
   }
   config() {
     this.router.navigate(['/tabs/tab3']);
