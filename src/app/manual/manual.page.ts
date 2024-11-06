@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-manual',
@@ -8,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class ManualPage implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private navCtrl: NavController, private router:Router) { }
 
   ngOnInit() {
   }
 
-  regresar(){
-    this.router.navigate(['/tabs/tab4']);
+  goBack(){
+    this.navCtrl.back();
   }
 }

@@ -188,6 +188,7 @@ h2 {
 ion-button {
   color: #0c487a;
   font-size: 20px;
+
 }
 
 .titulo {
@@ -215,4 +216,14 @@ ion-input{
 }
 ion-item {
   margin: 5px 0 0px 0;
+}
+.cerrar{
+  display: flex;
+  justify-content:center;
+  ion-item{
+    border-color: #0c487a;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 30px;
+  }
 }

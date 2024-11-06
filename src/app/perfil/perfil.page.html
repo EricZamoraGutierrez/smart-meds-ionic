@@ -194,17 +194,17 @@
   <div class="cerrar">
   <ion-list>
     <ion-item lines="none">
-      <ion-icon name="lock-open-outline" slot="start"></ion-icon>
+      <ion-icon name="lock-open" slot="start"></ion-icon>
       <ion-label>Política Y Privacidad</ion-label>
       <ion-icon name="chevron-forward" slot="end"></ion-icon>
     </ion-item>
-<ion-button>
-    <ion-item lines="none">
-      <ion-icon name="exit-outline" slot="start"></ion-icon>
+
+    <ion-item (click)="cerrar()" lines="none">
+      <ion-icon name="exit" slot="start"></ion-icon>
       <ion-label>Cerrar Sesión</ion-label>
       <ion-icon name="chevron-forward" slot="end"></ion-icon>
     </ion-item>
-  </ion-button>
+  
   </ion-list>
 </div>
 </ion-content>

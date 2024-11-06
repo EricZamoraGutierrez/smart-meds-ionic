@@ -89,6 +89,10 @@ export class PerfilPage implements OnInit {
     this.router.navigate(['/tabs/tab4']);
   }
 
+  cerrar(){
+    this.router.navigate(['/login']);
+  }
+
   isFormValid(): boolean {
     return this.myForm.valid;
   }

@@ -31,6 +31,9 @@ export class Tab1Page {
   config() {
     this.router.navigate(['/tabs/tab3']);
   }
+  ayuda() {
+    this.router.navigate(['/manual']);
+  }
 
   data: any = [];
 
