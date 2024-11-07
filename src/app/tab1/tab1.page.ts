@@ -25,6 +25,9 @@ export class Tab1Page {
   recetas() {
     this.router.navigate(['/tabs/tab2']);
   }
+  botiquin() {
+    this.router.navigate(['/tabs/tab4']);
+  }
   perfil() {
     this.router.navigate(['/perfil']);
   }

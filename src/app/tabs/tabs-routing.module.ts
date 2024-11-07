@@ -21,7 +21,7 @@ const routes: Routes = [
       },
       {
       path: 'tab4',
-        loadChildren: () => import('../leer/leer.module').then(m => m.LeerPageModule)
+        loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
       },
       {
         path: '',

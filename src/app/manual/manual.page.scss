@@ -3,11 +3,16 @@ ion-card{
    border-color: #0c487a;
    border-width: 2px;
    border-style: solid;
+   color: #0c487a;
+   box-shadow: 10px;
+   margin-top: 50px;
+   
    ion-card-title{
     margin-left: 15px;
     text-align: center;
     font-size: 26px;
     margin: 10px 0 10px 0;
+    color: #0c487a;
    }
 }
 img{
@@ -21,4 +26,11 @@ img{
   display: flex;
 flex-direction: row;
 justify-content: space-between;
+}
+
+ion-icon{
+  color: #0c487a;
+}
+h2{
+  color: #0c487a;
 }

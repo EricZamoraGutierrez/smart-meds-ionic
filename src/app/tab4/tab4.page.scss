@@ -105,11 +105,6 @@ ion-row {
 }
 
 
-ion-avatar {
-
-    height: 150px;
-    width: 150px;
-}
 
 ion-label {
     h2 {
@@ -124,13 +119,12 @@ h2 {
     margin-top: 10px;
 }
 
-.perfil {
-    ion-icon {
-        height: 30px;
-        width: 30px;
-    }
-}
 
+
+h1{
+    text-align: center;
+    justify-content: center;
+}
 
 ion-button {
     color: #0c487a;
@@ -139,10 +133,6 @@ ion-button {
 
 .titulo {
     text-align: center;
-}
-
-ion-toolbar {
-    padding: 20px;
 }
 
 ion-list {
@@ -163,3 +153,23 @@ ion-input{
 ion-item {
     margin: 5px 0 0px 0;
 }
+
+ion-toolbar {
+    color: #0c487a;
+    text-align: center;
+    h2{
+        font-size: 28px;
+        color: #0c487a;
+    }
+    ion-icon{
+        height: 30px;
+        width: 30px;
+    }
+  }
+
+  ion-card{
+    border-color: #0c487a;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+  }
