@@ -133,8 +133,8 @@
       <ion-input
       label="Nombres"
       labelPlacement="stacked"
-      value=""
-      > {{userData.name}}
+      value= "{{userData.name}}"
+      > 
     </ion-input>
       <ion-button fill="clear" slot="end">
         <ion-icon name="create-outline"></ion-icon>
@@ -144,8 +144,9 @@
     <ion-item lines="none">
       <ion-input
       label="Apellidos"
+      id="lastname"
       labelPlacement="stacked"
-      value="{{userData.lastname}}"
+      value = "{{userData.lastname}}"
       >
     </ion-input>
       <ion-button fill="clear" slot="end">

@@ -95,7 +95,7 @@ export class AgregarPage implements OnInit {
       this.myFormTiempo.reset();
       this.myFormOtros.reset();
       this.saveMeds();
-      
+      console.log("formulado enviado")
     }
   }
   isFormValidGeneral(): boolean {
