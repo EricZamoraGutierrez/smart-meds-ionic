@@ -62,9 +62,9 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['tab4.page.scss']
 })
 export class Tab4Page {
-  expanded: boolean = true;
-  expanded2: boolean = true;
-  expanded3: boolean = true;
+  expanded: boolean = false;
+  expanded2: boolean = false;
+  expanded3: boolean = false;
 
 
   toggleCard() {

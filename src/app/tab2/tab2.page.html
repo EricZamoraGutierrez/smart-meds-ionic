@@ -294,6 +294,21 @@ helperText="Ejemplo: 08:00"
         </ion-card-content>
       </ion-card>
     </ion-list>
+
+    <ion-card *ngFor="let data of data">
+    
+      <ion-card-header>
+        <ion-card-title style="display: flex; 
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 8px;"> {{data.name}} cada {{data.interval}} horas <img (click)="delete(data.id)"src="assets/images/eliminar.png" style="width: 20px; 
+          height: 20px; 
+          " alt=""></ion-card-title>
+        <ion-card-subtitle><img src="assets/images/pill.webp" alt="" style="width: 25px;height: 25px;"> {{data.comment}} </ion-card-subtitle>
+      </ion-card-header>
+      
+    </ion-card>
+
   </div>
 
   <div *ngIf="selectedSegment === 'option1'">
