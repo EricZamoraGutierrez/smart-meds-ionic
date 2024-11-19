@@ -1,0 +1,282 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="textimage">
+      <img src="assets/images/LogoSmartMeds.png" alt="" style="
+      
+      width: 40px; /* Tamaño fijo de la imagen */
+  height: auto; /* Para mantener la proporción de la imagen */
+ 
+   ">
+   </div>
+  </ion-toolbar>
+</ion-header>
+
+<div class="config">
+
+  <button (click)="perfil()" class="perfil">Perfil</button>
+
+  <button class="noti">Notificaciones</button>
+
+  <button class="temas">Apariencia</button>
+  
+  <button (click)="manual()" class="manual">Manual de instruccionnes</button>
+
+  <ion-button expand="full" (click)="cerrarsesion()">Cerrar sesion</ion-button>
+</div>
+
+<h1>Nuestras redes:</h1>
+<div class="redes">
+  <ion-row size="4">
+    <ion-col>
+    <a href="https://www.patreon.com/SmartMeds">
+      <img src="assets/images/Patreon_logo.svg.png" alt="patreon"></a>
+    </ion-col>
+    <ion-col>
+    <a (click)="copyToClipboard('smartmeds30@gmail.com')">
+      <img src="assets/images/email.png" alt="correo"></a>
+    </ion-col>
+    <ion-col>
+    <a href="https://www.facebook.com/profile.php?id=100094654482018">
+      <img src="assets/images/facebook.png" alt="facebook"></a>
+    </ion-col>
+    <ion-col>
+    <a href="https://twitter.com/SmartMedsMx">
+      <img src="assets/images/twitter.png" alt="twitter"></a>
+    </ion-col>
+  </ion-row>
+
+
+</div> -->
+
+<!-- <ion-toolbar>
+  <ion-buttons (click)="goBack()" slot="start">
+    <ion-button>
+      <ion-icon slot="icon-only" name="chevron-back" style="font-size: 38px;"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+<div class="titulo">
+   <h2>Mi Perfil</h2>
+  </div>
+
+  <ion-buttons slot="end">
+    <ion-button>
+      <ion-icon slot="icon-only" name="settings" style="font-size: 38px;"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="auto" class="profile-container">
+        <div class="avatar-wrapper">
+          <ion-avatar class="profile-avatar">
+            <img src="assets/images/conexioncompartir.png" alt="Profile Image"/>
+          </ion-avatar>
+          <ion-icon class="edit-icon" name="create-outline"></ion-icon>
+        </div>
+        <h2 class="profile-name">Nombre Apellido</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+  <ion-list class="datos">
+    <ion-item lines="none">
+      <ion-input
+      label="Nombres"
+      labelPlacement="stacked"
+      value=""
+      >
+    </ion-input>
+      <ion-button fill="clear" slot="end">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input
+      label="Apellidos"
+      labelPlacement="stacked"
+      value=""
+      >
+    </ion-input>
+      <ion-button fill="clear" slot="end">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input
+      label="Correo"
+      labelPlacement="stacked"
+      value=""
+      >
+    </ion-input>
+      <ion-button fill="clear" slot="end">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input
+      label="Contraseña"
+      labelPlacement="stacked"
+      value=""
+      >
+    </ion-input>
+      <ion-button fill="clear" slot="end">
+        <ion-icon name="eye"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input
+      label="telefono"
+      labelPlacement="stacked"
+      value=""
+      >
+    </ion-input>
+      <ion-button fill="clear" slot="end">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div class="cerrar">
+  <ion-list>
+    <ion-item lines="none">
+      <ion-icon name="lock-open-outline" slot="start"></ion-icon>
+      <ion-label>Política Y Privacidad</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="exit-outline" slot="start"></ion-icon>
+      <ion-label>Cerrar Sesión</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content> -->
+
+
+
+
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="textimage">
+      <img src="assets/images/LogoSmartMeds.png" alt="" style="
+      
+      width: 40px; /* Tamaño fijo de la imagen */
+  height: auto; /* Para mantener la proporción de la imagen */
+ 
+   ">
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-toolbar>
+
+  <ion-buttons (click)="goBack()" slot="start">
+    <ion-icon name="chevron-back"></ion-icon>
+  </ion-buttons>
+  <h2>Smart-Kit</h2>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+
+    <div class="todo">
+      <h1>Estado de la puerta: {{state}}</h1>
+    </div>
+    <div class="alta">
+      <ion-card>
+        <ion-card-header (click)="toggleCard()">
+          <ion-card-title>Datos de la repisa alta</ion-card-title>
+          <ion-card-title>Peso: g.</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!expanded">
+
+          < Repisa "Alta" 
+          Supongamos que esto es un desplegable oculto 
+          <ol *ngFor="let medicine of dataRepisaAlta">
+            <div class="repalta">
+              <ion-card class="cardalta">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+
+    <div class="media">
+      <ion-card>
+        <ion-card-header (click)="toggleCard2()">
+          <ion-card-title>Datos de la repisa media</ion-card-title>
+          <ion-card-title>Peso: g.</ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="!expanded2">
+
+           Repisa "Media" 
+
+          <ol *ngFor="let medicine of dataRepisaMedia">
+            <div class="repmedia">
+              <ion-card class="cardmedia">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+    <div class="baja">
+      <ion-card>
+        <ion-card-header (click)="toggleCard3()">
+          <ion-card-title>Datos de la repisa baja </ion-card-title>
+          <ion-card-title>Peso: {{weight}} g.</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!expanded3">
+          Repisa "Baja" 
+
+          <ol *ngFor="let medicine of dataRepisaBaja">
+            <div class="repbaja">
+              <ion-card class="cardbaja">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
+
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+
+</ion-content>
