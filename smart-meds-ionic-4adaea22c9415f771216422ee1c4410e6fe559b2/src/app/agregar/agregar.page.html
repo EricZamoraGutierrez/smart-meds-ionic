@@ -148,8 +148,9 @@
   <div class="titulo">
     <h2>Nueva receta</h2>
   </div>
+  <ion-button style="display: block; margin: 0 auto;" (click)="submitForm()" [enable]="!isFormValidGeneral()">Agregar</ion-button>
   
-  <ion-button style="display: block; margin: 0 auto;" [enable]="!isFormValidGeneral()" (click)="redirectToHomePage" (click)="submitForm()">Agregar</ion-button>
+  <!-- [enable]="!isFormValidGeneral()" -->
 </ion-toolbar>
 
 <ion-content>
@@ -158,6 +159,7 @@
   <swiper-container>
     <swiper-slide>
       <form [formGroup]="myFormGeneral">
+    
       <div class="nombre">
         <h2>Datos generales</h2>
           <p>Datos como nombre, dosis, caracteristicas.</p>
@@ -194,7 +196,7 @@
         <ion-label type="text" fill="solid" placeholder="Presentacion"
           helperText="Ejemplo: Caja"></ion-label>
         <ion-item>
-          <ion-select id="presenForm" fill="solid" justify="spacwe-between"
+          <ion-select id="presenForm" fill="solid" justify="space-between"
             placeholder="Seleccione">
             <ion-select-option>Pastilla</ion-select-option>
             <ion-select-option>Capsula</ion-select-option>

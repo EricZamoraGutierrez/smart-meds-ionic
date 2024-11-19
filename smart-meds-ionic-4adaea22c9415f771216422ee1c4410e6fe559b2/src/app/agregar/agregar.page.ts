@@ -36,7 +36,7 @@ export class AgregarPage implements OnInit {
     private firestore: Firestore, private userService: UserService) {
     this.hours = Array.from({ length: 24 }, (_, i) => i);
 
-    this.expanded = true, this.expanded2 = true, this.expanded3 = true, this.expanded4 = true,
+    // this.expanded = true, this.expanded2 = true, this.expanded3 = true, this.expanded4 = true,
       this.myFormGeneral = this.formBuilder.group({
         name: ['', Validators.required],
         dosis: ['', Validators.required],
@@ -86,6 +86,9 @@ export class AgregarPage implements OnInit {
   }
 
   async submitForm() {
+    console.log(this.myFormGeneral.value);
+    console.log(this.myFormTiempo.value);
+    console.log(this.myFormOtros.value);
     if (this.myFormGeneral.valid && this.myFormTiempo.valid && this.myFormOtros.valid) {
       this.formDataGeneral.push(this.myFormGeneral.value),
         this.formDataTiempo.push(this.myFormTiempo.value),
@@ -95,7 +98,11 @@ export class AgregarPage implements OnInit {
       this.myFormTiempo.reset();
       this.myFormOtros.reset();
       this.saveMeds();
-      console.log("formulado enviado")
+      console.log("formulado enviado");
+      this.router.navigate(['/tabs/tab1']); // Redirecciona a la página "home"
+    }else
+    {
+      console.log("Formulario no valido");
     }
   }
   isFormValidGeneral(): boolean {

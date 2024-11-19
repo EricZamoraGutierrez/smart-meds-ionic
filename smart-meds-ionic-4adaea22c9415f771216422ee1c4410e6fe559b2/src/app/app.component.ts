@@ -22,6 +22,7 @@ export class AppComponent {
        
         if (response) {
           console.log('Logged in');
+          console.log(response);
           //un pop up quizas?
         }
       }, (error) => {
