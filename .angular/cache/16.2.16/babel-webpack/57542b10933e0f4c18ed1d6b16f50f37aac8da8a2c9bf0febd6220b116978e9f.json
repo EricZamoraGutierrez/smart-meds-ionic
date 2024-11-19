@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { registerPlugin } from '@capacitor/core';\nconst Preferences = registerPlugin('Preferences', {\n  web: () => import('./web').then(m => new m.PreferencesWeb())\n});\nexport * from './definitions';\nexport { Preferences };\n//# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { registerPlugin } from '@capacitor/core';\nimport { ClipboardWeb } from './web';\nconst Clipboard = registerPlugin('Clipboard', {\n  web: () => new ClipboardWeb()\n});\nexport * from './definitions';\nexport { Clipboard };\n//# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
