@@ -198,24 +198,27 @@
       <h1>Estado de la puerta: {{state}}</h1>
     </div>
     <div class="alta">
-      <ion-card>
+      <ion-card style="border-color: #0c487a;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 30px;">
         <ion-card-header (click)="toggleCard()">
           <ion-card-title>Datos de la repisa alta</ion-card-title>
           <ion-card-title>Peso: g.</ion-card-title>
         </ion-card-header>
 
-        <ion-card-content *ngIf="!expanded">
-
-          Repisa "Alta" 
+        <ion-card-content *ngIf="!expanded"> 
           <ol *ngFor="let medicine of dataRepisaAlta">
-            <div class="repalta">
-              <ion-card class="cardalta">
-                <ion-card-title>{{medicine.name}}</ion-card-title>
-                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
-                <div class="linea"></div>
-                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
-              </ion-card>
-            </div>
+            <li>
+              <div class="repalta">
+                <ion-card class="cardalta">
+                  <ion-card-title>{{medicine.name}}</ion-card-title>
+                  <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                  <div class="linea"></div>
+                  <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+                </ion-card>
+              </div>
+            </li>
           </ol>
 
         </ion-card-content>
@@ -225,7 +228,10 @@
 
 
     <div class="media">
-      <ion-card>
+      <ion-card style="border-color: #0c487a;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 30px;">
         <ion-card-header (click)="toggleCard2()">
           <ion-card-title>Datos de la repisa media</ion-card-title>
           <ion-card-title>Peso: g.</ion-card-title>
@@ -235,14 +241,16 @@
            Repisa "Media" 
 
           <ol *ngFor="let medicine of dataRepisaMedia">
-            <div class="repmedia">
-              <ion-card class="cardmedia">
-                <ion-card-title>{{medicine.name}}</ion-card-title>
-                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
-                <div class="linea"></div>
-                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
-              </ion-card>
-            </div>
+            <li>
+              <div class="repmedia">
+                <ion-card class="cardmedia">
+                  <ion-card-title>{{medicine.name}}</ion-card-title>
+                  <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                  <div class="linea"></div>
+                  <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+                </ion-card>
+              </div>
+            </li>
           </ol>
 
         </ion-card-content>
@@ -251,7 +259,10 @@
 
 
     <div class="baja">
-      <ion-card>
+      <ion-card style="border-color: #0c487a;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 30px;">
         <ion-card-header (click)="toggleCard3()">
           <ion-card-title>Datos de la repisa baja </ion-card-title>
           <ion-card-title>Peso: {{weight}} g.</ion-card-title>
@@ -261,14 +272,16 @@
           Repisa "Baja" 
 
           <ol *ngFor="let medicine of dataRepisaBaja">
-            <div class="repbaja">
-              <ion-card class="cardbaja">
-                <ion-card-title>{{medicine.name}}</ion-card-title>
-                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
-                <div class="linea"></div>
-                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
-              </ion-card>
-            </div>
+            <li>
+              <div class="repbaja">
+                <ion-card class="cardbaja">
+                  <ion-card-title>{{medicine.name}}</ion-card-title>
+                  <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                  <div class="linea"></div>
+                  <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+                </ion-card>
+              </div>
+            </li>
           </ol>
 
 
