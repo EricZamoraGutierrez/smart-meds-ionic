@@ -71,10 +71,13 @@ export class Tab2Page {
         name: doc.data()['name'],
         comment: doc.data()['Detalles']['comentario'],
         interval: '',
+        presen: doc.data()['presen'],
+        peso: doc.data()['Detalles']['peso'],
+        dosis: doc.data()['dosis'],
       }
       );
     });
-
+    console.log(this.data);
     const ref2 = collection(this.firestore, 'Prescripciones');
     const q2 = query(ref2)
     const querySnapshot2 = await getDocs(q2);
@@ -85,7 +88,7 @@ export class Tab2Page {
           this.data[i]['interval'] = doc.data()['interval'];
         }        
       }
-      console.log(this.data);
+      
     });
 
   }

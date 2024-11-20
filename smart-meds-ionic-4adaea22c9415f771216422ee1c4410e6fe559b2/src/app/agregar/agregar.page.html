@@ -166,7 +166,7 @@
         <ion-item>
           <h5>¿Cual es el nombre del medicamento?</h5>
         </ion-item>
-        <ion-input id="name" type="text" fill="solid" Placeholder="Medicamento"
+        <ion-input id="name" type="text" formControlName="name" fill="solid" Placeholder="Medicamento"
           helperText="Ejemplo: Paracetamol"></ion-input>
       </div>
 
@@ -174,13 +174,13 @@
         <ion-item>
           <h5>¿Cual es la dosis que se va a tomar?</h5>
         </ion-item>
-        <ion-input id="dosis" type="number" fill="solid" Placeholder="Dosis"
+        <ion-input id="dosis" type="number" formControlName="dosis" fill="solid" Placeholder="Dosis"
           helperText="Ejemplo: 1 pastilla"></ion-input>
       </div>
       <div class="medida">
         <ion-item>
           <h5>Unidad de medida del medicamento</h5>
-          <ion-select id="medida" fill="solid" justify="space-between"
+          <ion-select id="medida" formControlName="medida" fill="solid" justify="space-between"
             placeholder="Seleccione">
             <ion-select-option>Miligramo(s)</ion-select-option>
             <ion-select-option>Gramo(s)</ion-select-option>
@@ -193,10 +193,10 @@
         <ion-item>
           <h5>¿Cual es la presentacion del medicamento?</h5>
         </ion-item>
-        <ion-label type="text" fill="solid" placeholder="Presentacion"
+        <ion-label type="text"  fill="solid" placeholder="Presentacion"
           helperText="Ejemplo: Caja"></ion-label>
         <ion-item>
-          <ion-select id="presenForm" fill="solid" justify="space-between"
+          <ion-select id="presenForm" formControlName="presenForm" fill="solid" justify="space-between"
             placeholder="Seleccione">
             <ion-select-option>Pastilla</ion-select-option>
             <ion-select-option>Capsula</ion-select-option>
@@ -220,9 +220,6 @@
     
               <h2>Tiempo</h2>
               <p>Datos como fecha de inicio, hora de inicio.</p>
-     
-  
-    
               <ion-item>
                 <h5>¿Cada cuantas horas se va a tomar el medicamento?</h5>
               </ion-item>

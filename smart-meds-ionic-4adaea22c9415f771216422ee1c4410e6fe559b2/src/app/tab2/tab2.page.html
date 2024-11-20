@@ -275,7 +275,7 @@ helperText="Ejemplo: 08:00"
           <ion-icon name="medkit-outline" slot="start"></ion-icon>
           <ion-label>
             <h2>{{data.name}}</h2>
-            <p>Uso: {{id}}</p>
+            <p>Uso: {{data.presen}}</p>
           </ion-label>
         </ion-item>
         <ion-card-content>
@@ -283,11 +283,11 @@ helperText="Ejemplo: 08:00"
           <p>{{data.comment}}</p>
           <div style="display: flex; justify-content: space-between; margin-top: 10px;">
   
-            <ion-label>Mg: 30</ion-label>
+            <ion-label>Mg: {{data.peso}}</ion-label>
   
-            <ion-label>2 pastillas</ion-label>
+            <ion-label>Dosis: {{data.dosis}}</ion-label>
   
-            <ion-label>Consumo: Cada 8 horas</ion-label>
+            <ion-label>Consumo: cada {{data.interval}} horas</ion-label>
           </div>
         </ion-card-content>
       </ion-card>
