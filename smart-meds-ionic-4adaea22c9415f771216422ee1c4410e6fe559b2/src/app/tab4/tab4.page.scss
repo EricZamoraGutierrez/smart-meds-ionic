@@ -173,9 +173,17 @@ ion-toolbar {
     }
   }
 
-  ion-card{
-    border-color: #0c487a;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 30px;
+  .cardalta, .cardmedia, .cardbaja{
+border-radius: 20px;
+border-color: #0c487a;
+border-width: 2px;
+border-style: solid;
+padding:0 20px 0 20px;
+
   }
+  ol{
+    display: block;
+    justify-content: center;
+    margin-left: -16px;
+  }
+  
