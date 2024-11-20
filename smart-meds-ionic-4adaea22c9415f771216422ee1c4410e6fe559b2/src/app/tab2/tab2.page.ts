@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { OnInit } from '@angular/core';
 import { Firestore, collection, addDoc, query, where, getDocs, getDoc, deleteDoc, doc} from '@angular/fire/firestore';
 
 
@@ -84,7 +85,7 @@ export class Tab2Page {
           this.data[i]['interval'] = doc.data()['interval'];
         }        
       }
-      
+      console.log(this.data);
     });
 
   }

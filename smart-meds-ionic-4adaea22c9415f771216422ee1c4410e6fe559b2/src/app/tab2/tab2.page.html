@@ -269,18 +269,18 @@ helperText="Ejemplo: 08:00"
   </ion-segment>
 
   <div *ngIf="selectedSegment === 'option2'">
-    <ion-list>
+  
       <ion-card *ngFor="let data of data">
         <ion-item>
           <ion-icon name="medkit-outline" slot="start"></ion-icon>
           <ion-label>
-            <h2>Ketorolaco</h2>
-            <p>Uso: Anti-inflamatorio</p>
+            <h2>{{data.name}}</h2>
+            <p>Uso: {{id}}</p>
           </ion-label>
         </ion-item>
         <ion-card-content>
           <p><strong>Comentarios:</strong> </p><br>
-          <p>{{data.comentario}}</p>
+          <p>{{data.comment}}</p>
           <div style="display: flex; justify-content: space-between; margin-top: 10px;">
   
             <ion-label>Mg: 30</ion-label>
@@ -291,7 +291,7 @@ helperText="Ejemplo: 08:00"
           </div>
         </ion-card-content>
       </ion-card>
-    </ion-list>
+   
   </div>
 
   <div *ngIf="selectedSegment === 'option1'">
