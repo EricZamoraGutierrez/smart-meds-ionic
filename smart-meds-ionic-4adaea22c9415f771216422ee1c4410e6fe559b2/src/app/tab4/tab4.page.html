@@ -203,22 +203,24 @@
       border-style: solid;
       border-radius: 30px;">
         <ion-card-header (click)="toggleCard()">
-          <ion-card-title>Datos de la repisa alta</ion-card-title>
-          <ion-card-title>Peso: g.</ion-card-title>
+          <h3>Datos de la repisa alta</h3>
+          <h3>Peso: {{weight1}}g.</h3>
         </ion-card-header>
 
         <ion-card-content *ngIf="!expanded"> 
           <ol *ngFor="let medicine of dataRepisaAlta">
-            <li>
-              <div class="repalta">
-                <ion-card class="cardalta">
-                  <ion-card-title>{{medicine.name}}</ion-card-title>
-                  <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
-                  <div class="linea"></div>
-                  <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
-                </ion-card>
-              </div>
-            </li>
+            <div class="repalta">
+              <ion-card class="cardalta">
+                <ion-row>
+                  <ion-col>
+                    <h2>{{medicine.name}}</h2> 
+                  </ion-col>
+                  <ion-col>
+                    <h4>{{medicine.Detalles.peso}}</h4>
+                  </ion-col>
+                </ion-row>
+              </ion-card>
+            </div>
           </ol>
 
         </ion-card-content>
@@ -233,24 +235,26 @@
       border-style: solid;
       border-radius: 30px;">
         <ion-card-header (click)="toggleCard2()">
-          <ion-card-title>Datos de la repisa media</ion-card-title>
-          <ion-card-title>Peso: g.</ion-card-title>
+          <h3>Datos de la repisa media</h3>
+          <h3>Peso: {{weight2}}g.</h3>
         </ion-card-header>
         <ion-card-content *ngIf="!expanded2">
 
            Repisa "Media" 
 
           <ol *ngFor="let medicine of dataRepisaMedia">
-            <li>
-              <div class="repmedia">
-                <ion-card class="cardmedia">
-                  <ion-card-title>{{medicine.name}}</ion-card-title>
-                  <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
-                  <div class="linea"></div>
-                  <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
-                </ion-card>
-              </div>
-            </li>
+            <div class="repmedia">
+              <ion-card class="cardmedia">
+                <ion-row>
+                  <ion-col>
+                    <h2>{{medicine.name}}</h2> 
+                  </ion-col>
+                  <ion-col>
+                    <h4>{{medicine.Detalles.peso}}</h4>
+                  </ion-col>
+                </ion-row>
+              </ion-card>
+            </div>
           </ol>
 
         </ion-card-content>
@@ -265,23 +269,27 @@
       border-radius: 30px;">
         <ion-card-header (click)="toggleCard3()">
           <ion-card-title>Datos de la repisa baja </ion-card-title>
-          <ion-card-title>Peso: {{weight}} g.</ion-card-title>
+          <ion-card-title>Peso: {{weight3}} g.</ion-card-title>
         </ion-card-header>
 
         <ion-card-content *ngIf="!expanded3">
           Repisa "Baja" 
 
           <ol *ngFor="let medicine of dataRepisaBaja">
-            <li>
-              <div class="repbaja">
-                <ion-card class="cardbaja">
-                  <ion-card-title>{{medicine.name}}</ion-card-title>
-                  <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
-                  <div class="linea"></div>
-                  <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
-                </ion-card>
-              </div>
-            </li>
+            <div class="repbaja">
+              <ion-card class="cardbaja">
+                <ion-row>
+                  <ion-col>
+                    <h2>{{medicine.name}}</h2> 
+                  </ion-col>
+                  <ion-col>
+                    <h4>{{medicine.Detalles.peso}}</h4>
+                  </ion-col>
+                </ion-row>
+                
+                
+              </ion-card>
+            </div>
           </ol>
 
 

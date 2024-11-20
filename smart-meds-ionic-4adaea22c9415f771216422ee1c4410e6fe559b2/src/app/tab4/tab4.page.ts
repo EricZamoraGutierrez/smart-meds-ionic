@@ -82,9 +82,11 @@ export class Tab4Page {
 
   constructor(private firestore: Firestore,private navCtrl: NavController, private notifications: NotificationsService) { }
   public db = getDatabase()
-  public reference = ref(this.db, 'Peso')
+  public reference = ref(this.db, 'basculas')
   public stateRef = ref(this.db, 'Puerta')
-  public weight = 0;
+  public weight1 = 0;
+  public weight2 = 0;
+  public weight3 = 0;
   public state = "Cerrada";
   public dataRepisaAlta: any[] = [];
   public dataRepisaBaja: any[] = [];
@@ -109,7 +111,9 @@ goBack() {
   async readKit() {
     await get(this.reference).then((snapshot) => {
       const value = snapshot.val()
-      this.weight = value;
+      this.weight1 = Math.round(value.bascula1) ;
+      this.weight2 = Math.round(value.bascula2);
+      this.weight3 = Math.round(value.bascula3);
     })
     await get(this.stateRef).then((snapshot) => {
       const value = snapshot.val()
