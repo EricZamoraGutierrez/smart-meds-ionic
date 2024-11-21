@@ -48,6 +48,7 @@ export class Tab2Page {
   
   segmentChanged(event: any) {
     this.selectedSegment = event.detail.value;  // Obtener el valor seleccionado
+    console.log(this.selectedSegment);
   }
 
   goBack() {
