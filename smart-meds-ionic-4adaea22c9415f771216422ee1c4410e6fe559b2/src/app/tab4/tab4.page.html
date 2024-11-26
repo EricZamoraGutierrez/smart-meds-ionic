@@ -198,25 +198,34 @@
       border-width: 2px;
       border-style: solid;
       border-radius: 30px;">
-      <ion-card-header (click)="toggleCard()">
-        <ion-card-title>Repisa alta</ion-card-title>
-            <ion-item><ion-icon slot="start" name="barbell"></ion-icon>Peso: {{weight1}}g.</ion-item>
+      <ion-card-header (click)="expand('Alta')">
+        <ion-card-title>Repisa media</ion-card-title>
+        <ion-item><ion-icon slot="start" name="barbell"></ion-icon>Peso:
+          {{weight1}}g.</ion-item>
       </ion-card-header>
-
-      <ion-card-content *ngIf="!expanded">
+      <ion-card-content *ngIf="currentRepisa=='Alta'">
         <ion-item *ngFor="let medicine of dataRepisaAlta">
-          <div class="repalta">
-            <ion-card class="cardalta">
-            
-              <ion-item><ion-icon slot="start" name="bandage-outline"></ion-icon><h2>{{medicine.name}}</h2></ion-item>
-              <ion-item><h2>Peso: {{medicine.Detalles.peso}}</h2></ion-item>
-            </ion-card>
-          </div>
+
+          <ion-card class="cardalta">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon slot="start" name="bandage-outline"></ion-icon>
+                  <h2>{{medicine.name}}</h2>
+                </ion-col>
+                <ion-col>
+                  
+                  <h2> {{medicine.Detalles.peso}} Kg</h2>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+          </ion-card>
+
         </ion-item>
 
       </ion-card-content>
     </ion-card>
-
   </div>
 
   <div class="media">
@@ -224,19 +233,31 @@
       border-width: 2px;
       border-style: solid;
       border-radius: 30px;">
-      <ion-card-header (click)="toggleCard2()">
+      <ion-card-header (click)="expand('Media')">
         <ion-card-title>Repisa media</ion-card-title>
-        <ion-item><ion-icon slot="start" name="barbell"></ion-icon>Peso: {{weight2}}g.</ion-item>
+        <ion-item><ion-icon slot="start" name="barbell"></ion-icon>Peso:
+          {{weight2}}g.</ion-item>
       </ion-card-header>
-      <ion-card-content *ngIf="!expanded2">
-        <ol *ngFor="let medicine of dataRepisaMedia">
-          <div class="repmedia">
-            <ion-card class="cardmedia">
-              <ion-item><ion-icon slot="start" name="bandage-outline"></ion-icon><h2>{{medicine.name}}</h2></ion-item>
-              <ion-item><h2>Peso: {{medicine.Detalles.peso}}</h2></ion-item>
-            </ion-card>
-          </div>
-        </ol>
+      <ion-card-content *ngIf="currentRepisa=='Media'">
+        <ion-item *ngFor="let medicine of dataRepisaMedia">
+
+          <ion-card class="cardmedia">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon slot="start" name="bandage-outline"></ion-icon>
+                      <h2>{{medicine.name}}</h2>
+                </ion-col>
+                <ion-col>
+                  <ion-icon slot="start" name="bandage-outline"></ion-icon>
+                  <h2> {{medicine.Detalles.peso}} Kg</h2>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+          </ion-card>
+
+        </ion-item>
 
       </ion-card-content>
     </ion-card>
@@ -247,21 +268,33 @@
       border-width: 2px;
       border-style: solid;
       border-radius: 30px;">
-      <ion-card-header (click)="toggleCard3()">
+      <ion-card-header (click)="expand('Baja')">
         <ion-card-title>Repisa baja </ion-card-title>
-        <ion-item><ion-icon slot="start" name="barbell"></ion-icon>Peso: {{weight3}}g.</ion-item>
+        <ion-item><ion-icon slot="start" name="barbell"></ion-icon>Peso:
+          {{weight3}}g.</ion-item>
       </ion-card-header>
 
-      <ion-card-content *ngIf="!expanded3">
+      <ion-card-content *ngIf="currentRepisa=='Baja'">
 
-        <ol *ngFor="let medicine of dataRepisaBaja">
-          <div class="repbaja">
-            <ion-card class="cardbaja">
-              <ion-item><ion-icon slot="start" name="bandage-outline"></ion-icon><h2>{{medicine.name}}</h2></ion-item>
-              <ion-item><h2>Peso: {{medicine.Detalles.peso}}</h2></ion-item>
-            </ion-card>
-          </div>
-        </ol>
+        <ion-item *ngFor="let medicine of dataRepisaBaja">
+
+          <ion-card class="cardbaja">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon slot="start" name="bandage-outline"></ion-icon>
+                      <h2>{{medicine.name}}</h2>
+                </ion-col>
+                <ion-col>
+                  <ion-icon slot="start" name="bandage-outline"></ion-icon>
+                  <h2>Peso: {{medicine.Detalles.peso}}</h2>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+          </ion-card>
+
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </div>

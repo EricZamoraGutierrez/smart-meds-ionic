@@ -65,19 +65,26 @@ export class Tab4Page {
   expanded: boolean = true;
   expanded2: boolean = true;
   expanded3: boolean = true;
+currentRepisa: string = "none";
 
-
-  toggleCard() {
-    this.expanded = !this.expanded;
+  // toggleCard() {
+  //   this.expanded = !this.expanded;
+  // }
+expand(repisa: string){
+  if(this.currentRepisa == repisa){
+    this.currentRepisa = "none";
+  }else{
+    this.currentRepisa = repisa;
   }
+ 
+}
+  // toggleCard2() {
+  //   this.expanded2 = !this.expanded2;
+  // }
 
-  toggleCard2() {
-    this.expanded2 = !this.expanded2;
-  }
-
-  toggleCard3() {
-    this.expanded3 = !this.expanded3;
-  }
+  // toggleCard3() {
+  //   this.expanded3 = !this.expanded3;
+  // }
   
 
   constructor(private firestore: Firestore,private navCtrl: NavController, private notifications: NotificationsService) { }

@@ -177,20 +177,17 @@ ion-toolbar {
   }
 
   .cardalta, .cardmedia, .cardbaja{
-border-radius: 20px;
-border-color: #0c487a;
-border-width: 2px;
-border-style: solid;
-padding:0 20px 0 20px;
 color: #0c487a;
-
-  }
+box-shadow: none;
+}
   
-  .repalta{
+  .repalta, .repmedia, .repbaja{
     display: flex;
     justify-content: center;
+    box-shadow: NONE;
   }
   ion-icon{
     font-size: 30px;
     color: #0c487a;
   }
+ 
