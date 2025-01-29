@@ -1,0 +1,97 @@
+<!-- <ion-header [translucent]="true">
+    <ion-toolbar>
+      <div class="textimage">
+      <img src="assets/images/LogoSmartMeds.png" alt="" style="
+      
+      width: 40px; /* Tamaño fijo de la imagen */
+  height: auto; /* Para mantener la proporción de la imagen */
+ 
+   ">
+   
+   </div>
+    </ion-toolbar>
+  </ion-header> -->
+
+<!-- <ion-content>
+  <ion-card *ngFor="let data of data">
+    
+    <ion-card-header>
+      <ion-card-title style="display: flex; 
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 8px;"> {{data.name}} cada {{data.interval}} horas <img (click)="delete(data.id)"src="assets/images/eliminar.png" style="width: 20px; 
+        height: 20px; 
+        " alt=""></ion-card-title>
+      <ion-card-subtitle><img src="assets/images/pill.webp" alt="" style="width: 25px;height: 25px;"> {{data.comment}} </ion-card-subtitle>
+    </ion-card-header>
+    
+  </ion-card>
+
+ 
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="agregar()"
+    >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content> -->
+<ion-content>
+
+  
+      
+  <ion-toolbar>
+    <ion-buttons (click)="config()" slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="settings" style="font-size: 38px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+ <div class="class logo">
+      <img src="assets/images/LogoSmartMeds.png" alt="Logo" class="header-image" style="height: 48px;"/>
+    </div>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications" style="font-size: 38px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-content class="ion-padding">
+    <div class="menu-section">
+      <h2>Menú</h2>
+      <div class="menu-grid">
+        <ion-card (click)="recetas()" class="menu-card">
+          <ion-icon src="assets/icon/pill2.svg"></ion-icon>
+          <ion-label>Recetas</ion-label>
+        </ion-card>
+        <ion-card (click)="botiquin()" class="menu-card">
+          <ion-icon name="medkit"></ion-icon>
+          <ion-label>Smart-Kit</ion-label>
+        </ion-card>
+        <ion-card (click)="perfil()" class="menu-card">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-card>
+        <ion-card (click)="ayuda()" class="menu-card">
+          <ion-icon name="help-circle"></ion-icon>
+          <ion-label>Ayuda</ion-label>
+        </ion-card>
+      </div>
+    </div>
+  
+    <div class="actions-section">
+      <h2>Acciones</h2>
+      <div class="menu-grid">
+        <ion-card class="menu-card">
+          <ion-icon name="megaphone"></ion-icon>
+          <ion-label>Alerta</ion-label>
+        </ion-card>
+        <ion-card class="menu-card">
+          <ion-icon src="assets/icon/door.svg"></ion-icon>
+          <ion-label>Puerta</ion-label>
+        </ion-card>
+      </div>
+    </div>
+  </ion-content>

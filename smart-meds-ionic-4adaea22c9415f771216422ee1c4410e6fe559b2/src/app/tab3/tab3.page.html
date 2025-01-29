@@ -1,0 +1,145 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="textimage">
+      <img src="assets/images/LogoSmartMeds.png" alt="" style="
+      
+      width: 40px; /* Tamaño fijo de la imagen */
+  height: auto; /* Para mantener la proporción de la imagen */
+ 
+   ">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+   Si la puerta está abierta o cerrada 
+  <p></p>
+
+
+    <div class="todo">
+      <h1>Estado de la puerta: {{state}}</h1>
+    </div>
+    <div class="alta">
+      <ion-card>
+        <ion-card-header (click)="toggleCard()">
+          <ion-card-title>Datos de la repisa alta</ion-card-title>
+          <ion-card-title>Peso: g.</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!expanded">
+
+          < Repisa "Alta" 
+          Supongamos que esto es un desplegable oculto 
+          <ol *ngFor="let medicine of dataRepisaAlta">
+            <div class="repalta">
+              <ion-card class="cardalta">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+
+    <div class="media">
+      <ion-card>
+        <ion-card-header (click)="toggleCard2()">
+          <ion-card-title>Datos de la repisa media</ion-card-title>
+          <ion-card-title>Peso: g.</ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="!expanded2">
+
+           Repisa "Media" 
+
+          <ol *ngFor="let medicine of dataRepisaMedia">
+            <div class="repmedia">
+              <ion-card class="cardmedia">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+    <div class="baja">
+      <ion-card>
+        <ion-card-header (click)="toggleCard3()">
+          <ion-card-title>Datos de la repisa baja </ion-card-title>
+          <ion-card-title>Peso: {{weight}} g.</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content *ngIf="!expanded3">
+          Repisa "Baja" 
+
+          <ol *ngFor="let medicine of dataRepisaBaja">
+            <div class="repbaja">
+              <ion-card class="cardbaja">
+                <ion-card-title>{{medicine.name}}</ion-card-title>
+                <div class="agrupador">Contenido: {{medicine.Detalles.peso}} {{medicine.medida}} {{medicine.presen}}</div>
+                <div class="linea"></div>
+                <ion-card-content>{{medicine.Detalles.comentario}}</ion-card-content>
+              </ion-card>
+            </div>
+          </ol>
+
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+
+</ion-content> -->
+
+
+    <ion-toolbar>
+      <ion-buttons (click)="goBack()" slot="start">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-buttons>
+      <h2>Configuración</h2>
+    </ion-toolbar>
+
+  
+  <ion-content>
+    <ion-list>
+      
+      <ion-item lines="none">
+        <ion-icon name="notifications-outline" slot="start"></ion-icon>
+        <ion-label>Notificaciones</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-icon name="key-outline" slot="start"></ion-icon>
+        <ion-label>Contraseña</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-icon name="person-remove-outline" slot="start"></ion-icon>
+        <ion-label>Borrar Cuenta</ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+  
+    </ion-list>
+  
+
+  </ion-content>
+  

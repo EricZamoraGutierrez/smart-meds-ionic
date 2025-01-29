@@ -1,0 +1,111 @@
+// img {
+//   object-fit: cover;
+//   object-position: center;
+//   width: 100%;
+//   height: 150px;
+// }
+
+// ion-card{
+//   padding: 2px;
+//   margin: 20px;
+//   border-radius: 30px;
+//   background-color: #88a4d8;
+//   border-color: white;
+//   border-width: 2px;
+//   border-style: solid;
+// }
+// ion-card-title{
+//   color: white;
+// }
+// ion-card-subtitle{
+//   color: white;
+// // }
+
+// .textimage{
+ 
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+// }
+// changes 
+img{
+  object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 150px;
+   }
+
+   ion-toolbar {
+    --background: #fff;
+    --padding-start: 0;
+    --padding-end: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 38px;
+  }
+  
+  .header-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+  
+  .menu-section, .actions-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 32px;
+    color: #0c487a;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px;
+    width: 100%;
+  }
+  
+  .menu-card {
+    --background: #fff;
+    --border-radius: 20px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
+    --icon-size: 36px;
+    --padding: 15px;
+    height: 120px;
+    border-radius: 15px;
+    border: 1px solid #0c487a;
+    color: #0c487a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    min-width: 80%;
+  }
+  
+  .menu-card ion-icon {
+    font-size: 66px;
+    margin-bottom: 10px;
+    color: #0c487a;
+  }
+  
+  .menu-card ion-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0c487a;
+  }
+  ion-icon{
+    color: #0c487a;
+  }
+
+  

@@ -1,0 +1,129 @@
+// ion-card{
+// background-color: transparent;
+// box-shadow: none;
+// }
+// .email{
+//     display: block;
+// }
+
+// .correo{
+//     margin-top: 10px;
+//     padding: 10px;
+//     font-size: 18px;
+// }
+// .contra{
+//     margin-top: 10px;
+//     padding: 10px;
+//     font-size: 18px;
+// }
+
+// .registro2{
+//     display: none;
+// }
+
+// .nombre{
+//     margin-top: 10px;
+//     padding: 10px;
+//     font-size: 18px;
+// }
+// .apellido{
+//     margin-top: 10px;
+//     padding: 10px;
+//     font-size: 18px;
+// }
+// .telefono{
+//     margin-top: 10px;
+//     padding: 10px;
+//     font-size: 18px;
+// }
+
+// img{
+//     width: 80%;
+//     height: 80%;
+//     display: block;
+//     margin: 0 auto;
+// }
+
+// ion-button{
+// margin-top: 20px;
+// }
+
+// .show{
+//     display: block;
+// }
+
+// .hide{
+//     display: none;
+// }
+
+/* login.page.scss */
+ion-card{
+    box-shadow: none;
+    padding: 20px;
+}
+  ion-content{
+    text-align: center;
+    padding: 20px;
+
+  }
+
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0c487a;
+    margin-bottom: 10px;
+  }
+  
+  .login-subtitle {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password p {
+    color: #000000;
+    font-size: 14px;
+  }
+  .forgot-password h6 {
+    color: #0c487a;
+    font-size: 14px;
+  }
+  
+  .login-button {
+    background-color: #0c487a;
+    color: white;
+    margin-bottom: 20px;
+    width: 180px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 80px;
+  }
+
+  .signup-link p {
+    font-size: 14px;
+    color: #0c487a;
+  }
+  
+
+ion-item{
+    border-radius: 50px;
+    border-color: #0c487a;
+    border-width: 2px;
+    border-style: solid;
+    margin-bottom: 20px;
+}
+
+ion-icon{
+    width: 30px;
+    height: 30px;
+}
+
+ion-input.custom{
+    font-size: 18px;
+    --background: none;
+}
