@@ -1,0 +1,148 @@
+
+<ion-toolbar>
+  <ion-buttons slot="start" (click)="goBack()">
+      <ion-icon slot="icon-only" name="chevron-back"
+        class="chevron-icon"></ion-icon>
+  </ion-buttons>
+
+  <div class="titulo">
+    <h2>Nueva receta</h2>
+  </div>
+  <ion-button style="display: block; margin: 0 auto;" (click)="submitForm()" [enable]="!isFormValidGeneral()">Actualizar</ion-button>
+  
+
+</ion-toolbar>
+
+<ion-content>
+  
+
+  <swiper-container>
+    <swiper-slide>
+      <form [formGroup]="myFormGeneral">
+    
+      <div class="nombre">
+        <h2>Datos generales</h2>
+          <p>Datos como nombre, dosis, caracteristicas.</p>
+        <ion-item>
+          <h5>¿Cual es el nombre del medicamento?</h5>
+        </ion-item>
+        <ion-input id="name" type="text" formControlName="name" fill="solid" Placeholder="Medicamento"
+          helperText="Ejemplo: Paracetamol"></ion-input>
+      </div>
+
+      <div class="dosis">
+        <ion-item>
+          <h5>¿Cual es la dosis que se va a tomar?</h5>
+        </ion-item>
+        <ion-input id="dosis" type="number" formControlName="dosis" fill="solid" Placeholder="Dosis"
+          helperText="Ejemplo: 1 pastilla"></ion-input>
+      </div>
+      <div class="medida">
+        <ion-item>
+          <h5>Unidad de medida del medicamento</h5>
+          <ion-select id="medida" formControlName="medida" fill="solid" justify="space-between"
+            placeholder="Seleccione">
+            <ion-select-option>Miligramo(s)</ion-select-option>
+            <ion-select-option>Gramo(s)</ion-select-option>
+            <ion-select-option>Mililitro(s)</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div class="presentacion">
+        <ion-item>
+          <h5>¿Cual es la presentacion del medicamento?</h5>
+        </ion-item>
+        <ion-label type="text"  fill="solid" placeholder="Presentacion"
+          helperText="Ejemplo: Caja"></ion-label>
+        <ion-item>
+          <ion-select id="presenForm" formControlName="presenForm" fill="solid" justify="space-between"
+            placeholder="Seleccione">
+            <ion-select-option>Pastilla</ion-select-option>
+            <ion-select-option>Capsula</ion-select-option>
+            <ion-select-option>Ampolleta</ion-select-option>
+            <ion-select-option>Solvente</ion-select-option>
+            <ion-select-option>Inyeccion</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </form>
+    </swiper-slide>
+
+
+
+
+
+    <swiper-slide>
+      <form [formGroup]="myFormTiempo">
+        <div class="tiempo">
+
+    
+              <h2>Tiempo</h2>
+              <p>Datos como fecha de inicio, hora de inicio.</p>
+              <ion-item>
+                <h5>¿Cada cuantas horas se va a tomar el medicamento?</h5>
+              </ion-item>
+              <ion-select id="selectedHour" formControlName="selectedHour" >
+                <ion-select-option *ngFor="let hour of hours" [value]="hour">{{ hour + 1 }}</ion-select-option>
+              </ion-select>
+              
+    
+              <ion-item>
+                <h5>¿Cual es la fecha de inicio?</h5>
+              </ion-item>
+              <ion-input id="inicio" formControlName="inicio" type="date" fill="solid" placeholder="Fecha" helperText="Ejemplo: 01/01/2021"></ion-input>
+    
+              <ion-item>
+                <h5>¿Cual es la fecha de finalizacion?</h5>
+              </ion-item>
+              <ion-input id="fin" formControlName="fin" type="date" fill="solid" placeholder="Fecha" helperText="Ejemplo: 01/01/2021"></ion-input>
+
+      
+        </div>
+      </form>
+    </swiper-slide>
+
+
+
+
+    
+    <swiper-slide>
+      <form [formGroup]="myFormOtros"> 
+        <div class="consumo">
+          
+       
+              <h2>Datos de consumo</h2>
+              <p>Datos como cantidad, unidad de medida, comentarios.</p>
+        
+    
+       
+              <ion-item>
+                <h5>¿Cual es el peso neto del envase?</h5>
+              </ion-item>
+              <ion-input id="peso" formControlName="peso" type="number" fill="solid" placeholder="Gramos" helperText="Ejemplo: 10 gramos"></ion-input>
+              
+              <ion-item>
+                <h5>¿En qué repisa del botiquín estará este medicamento?</h5>
+              </ion-item>
+              <ion-select id="repisaForm" formControlName="repisaForm" placeholder="Seleccione">
+                <ion-select-option>Alta</ion-select-option>
+                <ion-select-option>Media</ion-select-option>
+                <ion-select-option>Baja</ion-select-option>
+              </ion-select>
+    
+              <ion-item>
+                <h5>Contra indicaciones del medicamento</h5>
+              </ion-item>
+              <ion-input id="contra" formControlName="contra" type="text" fill="solid" helperText="Ejemplo: No tomar a x hora"></ion-input>
+    
+              <ion-item>
+                <h5>Comentarios del tratamiento</h5>
+              </ion-item>
+              <ion-input id="comentario" formControlName="comentario" type="text" fill="solid" helperText="Ejemplo: Tomar despues de comer"></ion-input>
+        </div>
+    
+      </form>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>

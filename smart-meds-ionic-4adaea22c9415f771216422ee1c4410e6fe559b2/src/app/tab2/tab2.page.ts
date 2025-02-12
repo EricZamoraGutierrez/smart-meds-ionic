@@ -19,6 +19,13 @@ export class Tab2Page {
   ionViewDidEnter() {
     this.readPrescriptions();
     this.data = [];
+    console.log('Home page did enter');
+  }
+  ionViewWillEnter() {
+    console.log('Home page will enter');
+  }
+  ionViewWillLeave() {
+    console.log('Home page will leave');
   }
 
   expanded: boolean = false;
@@ -44,6 +51,9 @@ export class Tab2Page {
 
   redirectToAgregar() {
     this.router.navigateByUrl('/agregar');
+  }
+  redirectToEditar(id: any) {
+    this.router.navigate(['/editar', id]);
   }
   
   segmentChanged(event: any) {

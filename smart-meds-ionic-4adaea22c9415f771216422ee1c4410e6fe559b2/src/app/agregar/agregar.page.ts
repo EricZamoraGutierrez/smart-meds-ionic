@@ -99,7 +99,8 @@ export class AgregarPage implements OnInit {
       this.myFormOtros.reset();
       this.saveMeds();
       console.log("formulado enviado");
-      this.router.navigate(['/tabs/tab1']); // Redirecciona a la página "home"
+      this.router.navigate(['/tabs/tab1'], );
+
     }else
     {
       console.log("Formulario no valido");

@@ -256,7 +256,7 @@ helperText="Ejemplo: 08:00"
 
 <ion-content>
 
-  <ion-segment mode="ios" value="option2" (ionChange)="segmentChanged($event)">
+  <ion-segment mode="ios" value="option1" (ionChange)="segmentChanged($event)">
     <ion-segment-button class="dos" value="option2">
       <ion-label>Completas</ion-label>
     </ion-segment-button>
@@ -268,12 +268,13 @@ helperText="Ejemplo: 08:00"
     </ion-segment-button>
   </ion-segment>
 
-  <div *ngIf="selectedSegment === 'option2'">
+  <div *ngIf="selectedSegment === 'option1'">
   
       <ion-card *ngFor="let data of data">
         <ion-item>
           <ion-icon name="medkit-outline" slot="start"></ion-icon>
           <ion-icon (click)="delete(data.id)" name="trash-outline" slot="end"></ion-icon>
+          <ion-icon (click)="redirectToEditar(data.id)" name="create-outline" slot="end"></ion-icon>
           <ion-label>
             <h2>{{data.name}}</h2>
             <p>Uso: {{data.presen}}</p>
@@ -297,7 +298,7 @@ helperText="Ejemplo: 08:00"
    
   </div>
 
-  <div *ngIf="selectedSegment === 'option1'">
+  <div *ngIf="selectedSegment === 'option2'">
     <ion-list>
       <ion-card>
         <ion-item>
