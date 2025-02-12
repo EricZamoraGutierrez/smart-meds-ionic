@@ -48,7 +48,7 @@ export class Tab2Page {
   
   segmentChanged(event: any) {
     this.selectedSegment = event.detail.value;  // Obtener el valor seleccionado
-    console.log(this.selectedSegment);
+    // console.log(this.selectedSegment);
   }
 
   goBack() {
@@ -61,7 +61,6 @@ export class Tab2Page {
   id: string = '';
 
   async readPrescriptions() {
-
     const ref = collection(this.firestore, 'Medicaciones');
     const q = query(ref)
     const querySnapshot = await getDocs(q);
@@ -93,9 +92,26 @@ export class Tab2Page {
     });
 
   }
-  delete(id:any){
+  async delete(id:any){
+    var presc = "";
+    console.log(id);
     const ref = doc(this.firestore, 'Medicaciones', id);
     deleteDoc(ref);
+    const ref2 = collection(this.firestore, 'Prescripciones');
+    const q2 = query(ref2)
+    const querySnapshot2 = await getDocs(q2);
+    querySnapshot2.forEach((doc) => {
+      var i = 0;
+      for(i=0; i<this.data.length; i++){
+        if(this.data[i]['id'] == doc.data()['MedID']){
+          doc.data()['MedID'] = id;
+          presc = doc.id;
+        }        
+      }
+      
+    });
+    const ref3 = doc(this.firestore, 'Prescripciones', presc);
+    deleteDoc(ref3);
     this.data = [];
     this.readPrescriptions();
 

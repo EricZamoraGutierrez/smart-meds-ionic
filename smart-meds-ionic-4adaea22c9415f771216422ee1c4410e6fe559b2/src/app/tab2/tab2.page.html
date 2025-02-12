@@ -273,11 +273,14 @@ helperText="Ejemplo: 08:00"
       <ion-card *ngFor="let data of data">
         <ion-item>
           <ion-icon name="medkit-outline" slot="start"></ion-icon>
+          <ion-icon (click)="delete(data.id)" name="trash-outline" slot="end"></ion-icon>
           <ion-label>
             <h2>{{data.name}}</h2>
             <p>Uso: {{data.presen}}</p>
-          </ion-label>
+          </ion-label> 
+          
         </ion-item>
+        
         <ion-card-content>
           <p><strong>Comentarios:</strong> </p><br>
           <p>{{data.comment}}</p>
