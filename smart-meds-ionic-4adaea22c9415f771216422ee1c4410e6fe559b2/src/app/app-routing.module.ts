@@ -25,9 +25,11 @@ const routes: Routes = [
   {
     path: 'leer',
     loadChildren: () => import('./leer/leer.module').then( m => m.LeerPageModule)
-  }
-
-
+  },
+{
+  path: 'editar/:id',
+  loadChildren: () => import('./editar/editar.module').then( m => m.EditarPageModule)
+},
 
 
 ];
