@@ -118,11 +118,15 @@
       <ion-col size="auto" class="profile-container">
         <div class="avatar-wrapper">
           <ion-avatar class="profile-avatar">
-            <img src="assets/images/conexioncompartir.png" alt="Profile Image"/>
+            <img src="{{imageSource}}" alt="Profile Image"/>
           </ion-avatar>
-          <ion-icon class="edit-icon" name="create-outline"></ion-icon>
+      
+          
+          <input type="button" id="loadFileXml" value="Avatar" onclick="document.getElementById('file').click();" />
+          <input type="file" id="photo" (change)="displayImage($event)" style="display:none;" id="file" name="file"/>
+          
         </div>
-        <h2 class="profile-name">Nombre Apellido</h2>
+        <h2 class="profile-name"> {{userData.name}} {{userData.lastname}}</h2>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -166,7 +170,7 @@
       </ion-button>
     </ion-item>
 
-    <ion-item lines="none">
+    <!-- <ion-item lines="none">
       <ion-input
       label="Contraseña"
       labelPlacement="stacked"
@@ -176,7 +180,7 @@
       <ion-button fill="clear" slot="end">
         <ion-icon name="eye"></ion-icon>
       </ion-button>
-    </ion-item>
+    </ion-item> -->
 
     <ion-item lines="none">
       <ion-input
