@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { OnInit } from '@angular/core';
 import { Firestore, collection, addDoc, query, where, getDocs, getDoc, deleteDoc, doc} from '@angular/fire/firestore';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 
 
@@ -27,6 +28,8 @@ export class Tab2Page {
   ionViewWillLeave() {
     console.log('Home page will leave');
   }
+
+
 
   expanded: boolean = false;
   expanded2: boolean = false;
@@ -64,6 +67,21 @@ export class Tab2Page {
   goBack() {
     this.navCtrl.back();
   }
+
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+  
+    var imageUrl = image.webPath;
+  
+    const imageElement = document.createElement('img');
+    if (imageUrl) {
+      imageElement.src = imageUrl;
+    }
+  };
 
   
   data: any = [];
