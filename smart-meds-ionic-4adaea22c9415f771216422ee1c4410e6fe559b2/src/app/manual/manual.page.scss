@@ -4,7 +4,6 @@ ion-card{
    border-width: 2px;
    border-style: solid;
    color: #0c487a;
-   box-shadow: 10px;
    margin-top: 50px;
    
    ion-card-title{
@@ -21,11 +20,15 @@ img{
   margin-left: 25%;
   
 }
+ion-toolbar{
+  margin-top: 20px;
+}
 
 .bar{
   display: flex;
 flex-direction: row;
 justify-content: space-between;
+
 }
 
 ion-icon{

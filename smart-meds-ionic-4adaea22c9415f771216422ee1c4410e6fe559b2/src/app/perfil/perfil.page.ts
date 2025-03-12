@@ -8,6 +8,7 @@ import { error } from 'console';
 import { getBlob, getBytes} from 'firebase/storage';
 import { NavController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-perfil',
   templateUrl: 'perfil.page.html',
