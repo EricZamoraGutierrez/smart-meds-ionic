@@ -37,13 +37,13 @@
 //   ion-card-header{
 //     background-color: #88a4d8;
 //   }
-  
+
 // }
 // .tiempo{
 //   ion-card-header{
 //     background-color: #88a4d8;
 //   }
-  
+
 // }
 
 // .consumo{
@@ -76,7 +76,7 @@
 //   margin-bottom: 30px;
 // }
 
-swiper-container{
+swiper-container {
   border-color: #0c487a;
   border-style: solid;
   border-width: 2px;
@@ -85,31 +85,45 @@ swiper-container{
   margin: 20px;
 }
 
-ion-toolbar{
+ion-toolbar {
   text-align: center;
   color: #0c487a;
   margin-top: 20px;
 
 }
-ion-button{
+
+ion-button {
   width: 80%;
 
 }
 
-ion-content{
+ion-content {
   text-align: center;
   justify-content: left;
   align-items: center;
-  }
-  div{
-    margin-bottom: 20px;
-  }
+}
 
-  ion-card{
-    box-shadow: none;
-    margin: -10px;
-  }
+div {
+  margin-bottom: 20px;
+}
 
-ion-icon{
+ion-card {
+  box-shadow: none;
+  margin: -10px;
+}
+
+ion-icon {
   color: #0c487a;
+}
+
+.camera {
+  border-width: 2px;
+  border-color: #0c487a;
+  border-style: solid;
+  margin: 20px;
+  display: flex;
+  // flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
 }

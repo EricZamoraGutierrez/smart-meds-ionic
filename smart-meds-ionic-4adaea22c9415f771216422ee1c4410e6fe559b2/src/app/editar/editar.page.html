@@ -8,9 +8,23 @@
   <div class="titulo">
     <h2>Nueva receta</h2>
   </div>
-  <ion-button style="display: block; margin: 0 auto;" (click)="submitForm()" [enable]="!isFormValidGeneral()">Actualizar</ion-button>
+  <ion-button style="display: block; margin: 0 auto;" (click)="submitForm()" [disabled]="!isFormValidGeneral()">Actualizar</ion-button>
   
 
+</ion-toolbar>
+
+
+</ion-content> -->
+<ion-toolbar>
+
+  <ion-buttons (click)="goBack()" slot="start">
+    <ion-icon name="chevron-back"></ion-icon>
+  </ion-buttons>
+  <h2>Editar</h2>
+  <!-- <ion-buttons (click)="takePicture()"> 
+    <ion-icon name="camera-outline"></ion-icon>
+  </ion-buttons> -->
+  <ion-button style="display: block; margin: 0 auto;" >Actualizar</ion-button>
 </ion-toolbar>
 
 <ion-content>
@@ -24,24 +38,21 @@
         <h2>Datos generales</h2>
           <p>Datos como nombre, dosis, caracteristicas.</p>
         <ion-item>
-          <h5>¿Cual es el nombre del medicamento?</h5>
+          <h5>Nombre del medicamento</h5>
         </ion-item>
-        <ion-input id="name" type="text" formControlName="name" fill="solid" Placeholder="Medicamento"
-          helperText="Ejemplo: Paracetamol"></ion-input>
+        <ion-input id="name" type="text" formControlName="name" fill="solid" [value]="data.name" helperText="Ejemplo: Paracetamol"></ion-input>
       </div>
 
       <div class="dosis">
         <ion-item>
-          <h5>¿Cual es la dosis que se va a tomar?</h5>
+          <h5>Dosis que se va a tomar</h5>
         </ion-item>
-        <ion-input id="dosis" type="number" formControlName="dosis" fill="solid" Placeholder="Dosis"
-          helperText="Ejemplo: 1 pastilla"></ion-input>
+        <ion-input id="dosis" type="number" formControlName="dosis" fill="solid" [value]="data.dosis" helperText="Ejemplo: 1 pastilla"></ion-input>
       </div>
       <div class="medida">
         <ion-item>
           <h5>Unidad de medida del medicamento</h5>
-          <ion-select id="medida" formControlName="medida" fill="solid" justify="space-between"
-            placeholder="Seleccione">
+          <ion-select id="medida" formControlName="medida" fill="solid" justify="space-between" [value]="data.medida">
             <ion-select-option>Miligramo(s)</ion-select-option>
             <ion-select-option>Gramo(s)</ion-select-option>
             <ion-select-option>Mililitro(s)</ion-select-option>
@@ -53,8 +64,7 @@
         <ion-item>
           <h5>¿Cual es la presentacion del medicamento?</h5>
         </ion-item>
-        <ion-label type="text"  fill="solid" placeholder="Presentacion"
-          helperText="Ejemplo: Caja"></ion-label>
+        <ion-label type="text"  fill="solid" [value]="data.presenForm" helperText="Ejemplo: Caja"></ion-label>
         <ion-item>
           <ion-select id="presenForm" formControlName="presenForm" fill="solid" justify="space-between"
             placeholder="Seleccione">
@@ -145,4 +155,4 @@
       </form>
     </swiper-slide>
   </swiper-container>
-</ion-content> -->
+</ion-content>

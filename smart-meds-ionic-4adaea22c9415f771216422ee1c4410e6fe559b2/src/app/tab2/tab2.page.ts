@@ -22,12 +22,12 @@ export class Tab2Page {
     this.data = [];
     console.log('Home page did enter');
   }
-  ionViewWillEnter() {
-    console.log('Home page will enter');
-  }
-  ionViewWillLeave() {
-    console.log('Home page will leave');
-  }
+  // ionViewWillEnter() {
+  //   console.log('Home page will enter');
+  // }
+  // ionViewWillLeave() {
+  //   console.log('Home page will leave');
+  // }
 
 
 
@@ -68,20 +68,20 @@ export class Tab2Page {
     this.navCtrl.back();
   }
 
-  takePicture = async () => {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      resultType: CameraResultType.Uri
-    });
+  // takePicture = async () => {
+  //   const image = await Camera.getPhoto({
+  //     quality: 90,
+  //     allowEditing: true,
+  //     resultType: CameraResultType.Uri
+  //   });
   
-    var imageUrl = image.webPath;
+  //   var imageUrl = image.webPath;
   
-    const imageElement = document.createElement('img');
-    if (imageUrl) {
-      imageElement.src = imageUrl;
-    }
-  };
+  //   const imageElement = document.createElement('img');
+  //   if (imageUrl) {
+  //     imageElement.src = imageUrl;
+  //   }
+  // };
 
   
   data: any = [];

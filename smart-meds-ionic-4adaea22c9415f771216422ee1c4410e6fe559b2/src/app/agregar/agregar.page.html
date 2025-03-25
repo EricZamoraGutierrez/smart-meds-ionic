@@ -148,7 +148,7 @@
   <div class="titulo">
     <h2>Nueva receta</h2>
   </div>
-  <ion-button style="display: block; margin: 0 auto;" (click)="submitForm()" [enable]="!isFormValidGeneral()">Agregar</ion-button>
+  <ion-button style="display: block; margin: 0 auto;" (click)="submitForm()" [disabled]="!isFormValidGeneral()" (click)="redirectToHomePage()">Agregar</ion-button>
   
   <!-- [enable]="!isFormValidGeneral()" -->
 </ion-toolbar>
@@ -281,9 +281,17 @@
               </ion-item>
               <ion-input id="comentario" formControlName="comentario" type="text" fill="solid" helperText="Ejemplo: Tomar despues de comer"></ion-input>
         </div>
-    
       </form>
     </swiper-slide>
+
+    <swiper-slide>
+      <ion-card class="camera">
+        <ion-buttons (click)="takePicture()"> 
+        <ion-icon name="camera-outline" size="large"></ion-icon>
+      </ion-buttons>
+      </ion-card>
+    </swiper-slide>
+
   </swiper-container>
   <ion-icon name="chevron-back-outline" size="large"></ion-icon>
   <ion-icon name="chevron-forward-outline" size="large"></ion-icon>

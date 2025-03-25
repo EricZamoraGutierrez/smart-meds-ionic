@@ -7,6 +7,7 @@ import { Firestore, collection, addDoc, getFirestore } from '@angular/fire/fires
 import { Router } from '@angular/router';
 import { register } from 'swiper/element';
 import { NavController } from '@ionic/angular';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 register();
 
@@ -36,7 +37,7 @@ export class AgregarPage implements OnInit {
     private firestore: Firestore, private userService: UserService) {
     this.hours = Array.from({ length: 24 }, (_, i) => i);
 
-    // this.expanded = true, this.expanded2 = true, this.expanded3 = true, this.expanded4 = true,
+
       this.myFormGeneral = this.formBuilder.group({
         name: ['', Validators.required],
         dosis: ['', Validators.required],
@@ -69,7 +70,21 @@ export class AgregarPage implements OnInit {
     
   }
   
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
   
+    var imageUrl = image.webPath;
+  
+    const imageElement = document.createElement('img');
+    if (imageUrl) {
+      imageElement.src = imageUrl;
+    }
+  };
+
   //User ID
   userId:string = "";
   //Medicine ID
@@ -121,26 +136,26 @@ export class AgregarPage implements OnInit {
   //email: "",
   //}
 
-  expanded: boolean = false;
-  expanded2: boolean = false;
-  expanded3: boolean = false;
-  expanded4: boolean = false;
+  // expanded: boolean = false;
+  // expanded2: boolean = false;
+  // expanded3: boolean = false;
+  // expanded4: boolean = false;
 
-  toggleCard() {
-    this.expanded = !this.expanded;
-  }
+  // toggleCard() {
+  //   this.expanded = !this.expanded;
+  // }
 
-  toggleCard2() {
-    this.expanded2 = !this.expanded2;
-  }
+  // toggleCard2() {
+  //   this.expanded2 = !this.expanded2;
+  // }
 
-  toggleCard3() {
-    this.expanded3 = !this.expanded3;
-  }
+  // toggleCard3() {
+  //   this.expanded3 = !this.expanded3;
+  // }
 
-  toggleCard4() {
-    this.expanded4 = !this.expanded4;
-  }
+  // toggleCard4() {
+  //   this.expanded4 = !this.expanded4;
+  // }
 
   
 
